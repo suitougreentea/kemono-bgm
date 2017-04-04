@@ -82,7 +82,7 @@ right = << \global \relative c'' {
   } \new Voice {
     \voiceThree
     s1*8
-    <c, f aes c>1\arpeggio | <ees g bes>\arpeggio | s | <ees g bes>\arpeggio |
+    <c, f aes c>1\arpeggio | \once \override Arpeggio.padding = 1.2 <ees g bes>\arpeggio | s | <ees g bes>\arpeggio |
     s1*4 |
     \override LaissezVibrerTieColumn.tie-configuration = #`((7 . ,UP) (9 . ,UP) (12 . ,UP))
     <a' c f>1\arpeggio\laissezVibrer
