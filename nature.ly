@@ -7,7 +7,7 @@ cright = \change Staff = "right"
 
 \header {
   title = "最初のやつ"
-  revision = "Revision 1"
+  revision = "Revision 2"
   date = "2017/4/14"
 }
 
@@ -18,7 +18,6 @@ global = {
   \set Timing.baseMoment = #(ly:make-moment 1/16)
   \set Timing.beatStructure = #'(6 4)
   s8 * 5 * 24
-  \bar "||"
   \time 6/8
   s8 * 6 * 8
   \bar "||"
