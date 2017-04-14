@@ -1,10 +1,14 @@
 \version "2.19.24"
 
+\include "stylesheet.ily"
+
 cleft = \change Staff = "left"
 cright = \change Staff = "right"
 
 \header {
   title = "最初のやつ"
+  revision = "Revision 1"
+  date = "2017/4/14"
 }
 
 global = {
@@ -184,7 +188,6 @@ pedal = {
 \score {
   <<
     \new PianoStaff \with {
-      % instrumentName = "Piano"
       connectArpeggios = ##t
     } <<
       \new Staff = "right" \with {
@@ -197,10 +200,6 @@ pedal = {
       \new Dynamics = "pedal" \pedal
     >>
   >>
-  \layout {
-    %system-count = 5
-  }
-  \midi {
-    %\tempo 8=195
-  }
+  \layout {}
+  \midi {}
 }

@@ -1,11 +1,13 @@
 \version "2.19.57"
 
+\include "stylesheet.ily"
+
 cleft = \change Staff = "left"
 cright = \change Staff = "right"
 
 \paper {
-  %page-count = 2
   print-all-headers = ##t
+  page-count = 1
 }
 
 global_a = {
@@ -14,6 +16,7 @@ global_a = {
   \partial 4 { s4 }
   s1*9 \bar "|."
 }
+
 right_a = << \global_a \relative c {
   \clef bass
   r16 a bes b |
@@ -28,6 +31,7 @@ right_a = << \global_a \relative c {
   aes8-. r g-. r <a, c ees fis>2 ~ |
   q4 <d gis>16(<ees a> <e ais> <f b>) r2
 } >>
+
 left_a = << \global_a \relative c, {
   r16 a bes b |
   c8-. r c16[ ees r f] r g r8 r4 |
@@ -40,10 +44,12 @@ left_a = << \global_a \relative c, {
   c8-_ r c16[ ees r f] r g r8 r g8-. |
   <aes aes'>8-. r <g g'>-. r <fis fis'>2 ~ | q4 g?16( fis f ees?) r2
 } >>
+
 dynamics_a = {
   s4\mp
   s1*4 s1*4 s4 s8.\< s16\!
 }
+
 pedal_a = {
   s4
   s1*7
@@ -61,7 +67,6 @@ pedal_a = {
 }
 
 global_b = {
-  \numericTimeSignature
   \key c \major
   \time 4/4
   \tempo 4 = 178
@@ -94,16 +99,11 @@ dynamics_b = {
   s1*2\mf s1-\markup \italic "simile"
 }
 
-pedal_b = {
-
-}
+pedal_b = {}
 
 \score {
   <<
-    \new PianoStaff \with {
-      % instrumentName = "Piano"
-      % connectArpeggios = ##t
-    } <<
+    \new PianoStaff <<
       \new Staff = "right" \with {
         midiInstrument = "acoustic grand"
       } \right_a
@@ -115,10 +115,9 @@ pedal_b = {
     >>
   >>
   \header {
-    title = \markup {
-      \override #'(font-name . "游ゴシック体")
-      "偵察するやつ"
-    }
+    title = "偵察するやつ"
+    revision = "Revision 1"
+    date = "2017/4/14"
   }
   \layout {}
   \midi {}
@@ -126,10 +125,7 @@ pedal_b = {
 
 \score {
   <<
-    \new PianoStaff \with {
-      % instrumentName = "Piano"
-      % connectArpeggios = ##t
-    } <<
+    \new PianoStaff <<
       \new Staff = "right" \with {
         midiInstrument = "acoustic grand"
       } \right_b
@@ -141,18 +137,10 @@ pedal_b = {
     >>
   >>
   \header {
-    title = \markup {
-      \override #'(font-name . "游ゴシック体")
-      "早とちるやつ"
-    }
+    title = "早とちるやつ"
+    revision = "Revision 1"
+    date = "2017/4/14"
   }
   \layout {}
   \midi {}
-}
-
-\header {
-  tagline = \markup \fill-line \italic {
-    "LilyPond - Music notation for everyone"
-    \small #(string-append "Version " (lilypond-version) ", lilypond.org")
-  }
 }

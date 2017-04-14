@@ -1,5 +1,7 @@
 \version "2.19.24"
 
+\include "stylesheet.ily"
+
 cleft = \change Staff = "left"
 cright = \change Staff = "right"
 
@@ -45,14 +47,14 @@ compoundTime = {
 
 \header {
   title = "食べないやつ"
+  revision = "Revision 2"
+  date = "2017/4/14"
 }
 
 \paper {
-  %page-count = 2
 }
 
 global = {
-  \numericTimeSignature
   \key d \major
   \tempo 4=158
   \compoundTime
@@ -143,8 +145,6 @@ dynamics = {
   \override DynamicTextSpanner.style = #'dashed-line
   s1*8\<
   s1\f
-
-
 }
 
 pedal = {
@@ -162,7 +162,6 @@ pedal = {
 }
 
 globala = {
-  \numericTimeSignature
   \key d \major
   \tempo 4=158
   \compoundTime
@@ -195,14 +194,11 @@ dynamicsa = {
 }
 
 pedala = {
-
 }
 
 \score {
   <<
-    \new PianoStaff \with {
-      % instrumentName = "Piano"
-    } <<
+    \new PianoStaff <<
       \new Staff = "right" \with {
         midiInstrument = "acoustic grand"
       } \right
@@ -213,19 +209,16 @@ pedala = {
       \new Dynamics = "pedal" \pedal
     >>
   >>
-  \layout {
-    %system-count = 5
-  }
   \header {
     piece = "Long ver."
   }
+  \layout {}
   \midi {}
 }
 
 \score {
   <<
     \new PianoStaff \with {
-      % instrumentName = "Piano"
     } <<
       \new Staff = "right" \with {
         midiInstrument = "acoustic grand"
@@ -237,11 +230,9 @@ pedala = {
       \new Dynamics = "pedal" \pedala
     >>
   >>
-  \layout {
-    %system-count = 5
-  }
   \header {
     piece = "Short ver."
   }
+  \layout {}
   \midi {}
 }

@@ -1,25 +1,20 @@
 \version "2.19.24"
 
+\include "stylesheet.ily"
+
 cleft = \change Staff = "left"
 cright = \change Staff = "right"
 
 \header {
-  title = \markup {
-      \override #'(font-name . "游ゴシック体")
-      "合わせる顔が無いやつ"
-  }
-  tagline = \markup \fill-line \italic {
-    "LilyPond - Music notation for everyone"
-    \small #(string-append "Version " (lilypond-version) ", lilypond.org")
-  }
+  title = "合わせる顔が無いやつ"
+  revision = "Revision 1"
+  date = "2017/4/14"
 }
 
 \paper {
-  % page-count = 2
 }
 
 global = {
-  \numericTimeSignature
   \key a \major
   \time 4/4
   \tempo 4 = 70
@@ -115,7 +110,6 @@ pedal = {
 \score {
   <<
     \new PianoStaff \with {
-      % instrumentName = "Piano"
       connectArpeggios = ##t
     } <<
       \new Staff = "right" \with {
@@ -128,10 +122,6 @@ pedal = {
       \new Dynamics = "pedal" \pedal
     >>
   >>
-  \layout {
-    %system-count = 5
-  }
-  \midi {
-    %\tempo 8=195
-  }
+  \layout {}
+  \midi {}
 }

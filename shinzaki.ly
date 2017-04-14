@@ -1,7 +1,11 @@
 \version "2.19.24"
 
+\include "stylesheet.ily"
+
 \header {
   title = "ジャンプ力のやつ"
+  revision = "Revision 1"
+  date = "2017/4/14"
 }
 
 global = {
@@ -57,20 +61,7 @@ pedal = {
 
 \score {
   <<
-    %{\new RhythmicStaff \with {
-      \override Clef.stencil = ##f
-      \override KeySignature.stencil = ##f
-      \override TimeSignature.stencil = ##f
-    } {
-      \stopStaff
-      s1*10
-      \startStaff
-      bes8\repeatTie ~ \repeat tremolo 12 bes32 ~ \repeat tremolo 4 bes32 aes16 r a r bes8
-      \stopStaff
-    }%}
-    \new PianoStaff \with {
-      % instrumentName = "Piano"
-    } <<
+    \new PianoStaff <<
       \new Staff = "right" \with {
         midiInstrument = "acoustic grand"
       } \right

@@ -1,18 +1,20 @@
 \version "2.19.24"
 
+\include "stylesheet.ily"
+
 cleft = \change Staff = "left"
 cright = \change Staff = "right"
 
 \header {
   title = "10分間耐久のやつ"
+  revision = "Revision 1"
+  date = "2017/4/14"
 }
 
 \paper {
-  %page-count = 2
 }
 
 global = {
-  \numericTimeSignature
   \key c \major
   \time 4/4
   \tempo \markup {
@@ -37,37 +39,36 @@ global = {
 
   s1*5
   \bar "|."
-
 }
 
 right = << \global \relative c''' {
- r8 a16^\markup \italic "non legato" a bes bes g8 fis16 fis a a g8 r |
- r8 e16 e f f d8 bes d g r |
- r8 <a, a'>16 q <bes bes'> q <g g'>8 <fis fis'>16 q <a a'> q <g g'>8 r |
- r8 <e e'>16 q <f f'> q <d d'>8 <bes bes'> r \acciaccatura { \slurUp d'16 dis } <f, e'>4 ~ \slurNeutral | q2 |
+  r8 a16^\markup \italic "non legato" a bes bes g8 fis16 fis a a g8 r |
+  r8 e16 e f f d8 bes d g r |
+  r8 <a, a'>16 q <bes bes'> q <g g'>8 <fis fis'>16 q <a a'> q <g g'>8 r |
+  r8 <e e'>16 q <f f'> q <d d'>8 <bes bes'> r \acciaccatura { \slurUp d'16 dis } <f, e'>4 ~ \slurNeutral | q2 |
 
- r8 a'16 a bes bes g8 fis16 fis a a g8 r |
- r8 e16 e f f d8 bes d g r |
- r8 a16 a bes bes g8 fis16 fis a a g8 r |
- r8 e16 e f f d8 bes d c r |
+  r8 a'16 a bes bes g8 fis16 fis a a g8 r |
+  r8 e16 e f f d8 bes d g r |
+  r8 a16 a bes bes g8 fis16 fis a a g8 r |
+  r8 e16 e f f d8 bes d c r |
 
- r8 a16 a bes bes g8 fis16 fis a a g8 r |
- r8 e16 e f f d8 bes d g r |
- r8 a16 a bes bes g8 fis16 fis a a g8 r |
- r8 e16 e f f d8 bes( d-.--) c r |
+  r8 a16 a bes bes g8 fis16 fis a a g8 r |
+  r8 e16 e f f d8 bes d g r |
+  r8 a16 a bes bes g8 fis16 fis a a g8 r |
+  r8 e16 e f f d8 bes( d-.--) c r |
 
- r8 g'4 bes8 c-. r \acciaccatura dis16 e8. d16 | r c bes8-. r4 r2 |
- r8 g4 bes8 c-. r \acciaccatura dis16 e8. d16 | r e d8-. r4 r2 |
- r8 g,4 bes8 c-. r \acciaccatura dis16 e8. d16 | r c bes8-. r4 r << { c16 r d c } \\ { g8-.-- g-.-- } >> |
- << { r4 c16 r d c r4 c8 d } \\ { f,4-.-- f-.-- f-.-- f-.-- } >> | << { ees'2 e8 } \\ { <fis, a>8 q q q <f b> } >> r <g' g'>4-> |
+  r8 g'4 bes8 c-. r \acciaccatura dis16 e8. d16 | r c bes8-. r4 r2 |
+  r8 g4 bes8 c-. r \acciaccatura dis16 e8. d16 | r e d8-. r4 r2 |
+  r8 g,4 bes8 c-. r \acciaccatura dis16 e8. d16 | r c bes8-. r4 r << { c16 r d c } \\ { g8-.-- g-.-- } >> |
+  << { r4 c16 r d c r4 c8 d } \\ { f,4-.-- f-.-- f-.-- f-.-- } >> | << { ees'2 e8 } \\ { <fis, a>8 q q q <f b> } >> r <g' g'>4-> |
 
- R1*4
+  R1*4
 
- r8 <a, a'>16 q <bes bes'> q <g g'>8 <fis fis'>16 q <a a'> q <g g'>8 r |
- r8 <e e'>16 q <f f'> q <d d'>8 <bes bes'> <d d'> <g g'> r |
- r8 <a a'>16 q <bes bes'> q <g g'>8 <fis fis'>16 q <a a'> q <g g'>8 r |
- r8 <e e'>16 q <f f'> q <d d'>8 <bes bes'> <d d'> <g g'> r |
- r8 <e e'>16 q <f f'> q <d d'>8 <bes d bes'>->( <d f d'>-.->) <c e c'>-> r |
+  r8 <a, a'>16 q <bes bes'> q <g g'>8 <fis fis'>16 q <a a'> q <g g'>8 r |
+  r8 <e e'>16 q <f f'> q <d d'>8 <bes bes'> <d d'> <g g'> r |
+  r8 <a a'>16 q <bes bes'> q <g g'>8 <fis fis'>16 q <a a'> q <g g'>8 r |
+  r8 <e e'>16 q <f f'> q <d d'>8 <bes bes'> <d d'> <g g'> r |
+  r8 <e e'>16 q <f f'> q <d d'>8 <bes d bes'>->( <d f d'>-.->) <c e c'>-> r |
 } >>
 
 left = << \global \relative c {
@@ -141,13 +142,11 @@ pedal = {
   \set Dynamics.pedalSustainStyle = #'text
   s8\sustainOn s\sustainOff s2.
   s2 s8\sustainOn s\sustainOff
-
 }
 
 \score {
   <<
     \new PianoStaff \with {
-      % instrumentName = "Piano"
       connectArpeggios = ##t
     } <<
       \new Staff = "right" \with {
@@ -160,9 +159,7 @@ pedal = {
       \new Dynamics = "pedal" \pedal
     >>
   >>
-  \layout {
-    %system-count = 5
-  }
+  \layout {}
   \midi {
     \tempo 4=86
   }

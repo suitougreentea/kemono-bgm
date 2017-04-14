@@ -1,5 +1,7 @@
 \version "2.19.24"
 
+\include "stylesheet.ily"
+
 cleft = \change Staff = "left"
 cright = \change Staff = "right"
 
@@ -12,14 +14,14 @@ av = #(define-music-function
 
 \header {
   title = "ハァハァしないやつ"
+  revision = "Revision 1"
+  date = "2017/4/14"
 }
 
 \paper {
-  %page-count = 2
 }
 
 global = {
-  \numericTimeSignature
   \key g \major
   \time 4/4
   \tempo 4 = 88
@@ -141,10 +143,7 @@ pedal = {
 
 \score {
   <<
-    \new PianoStaff \with {
-      % instrumentName = "Piano"
-      % connectArpeggios = ##t
-    } <<
+    \new PianoStaff <<
       \new Staff = "right" \with {
         midiInstrument = "acoustic grand"
       } \right
@@ -155,10 +154,6 @@ pedal = {
       \new Dynamics = "pedal" \pedal
     >>
   >>
-  \layout {
-    %system-count = 5
-  }
-  \midi {
-    %\tempo 8=195
-  }
+  \layout {}
+  \midi {}
 }

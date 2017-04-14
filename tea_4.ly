@@ -1,22 +1,18 @@
 \version "2.19.57"
 
+\include "stylesheet.ily"
+
 cll = \change Staff = "ll"
 clr = \change Staff = "lr"
 crl = \change Staff = "rl"
 crr = \change Staff = "rr"
 
 \header {
-  title = \markup {
-      \override #'(font-name . "游ゴシック体")
-      "二人でお茶を"
-  }
+  title = "二人でお茶を"
   subtitle = \markup { \center-column { \normal-text \italic "from Kemono Friends episode 12" \bold \italic "Faithful copy for 4 hands" } }
   composer = "Original by Vincent Youmans"
-  opus = \markup { \concat { "1" \super "st" } "version" }
-  tagline = \markup \fill-line \italic {
-    "LilyPond - Music notation for everyone"
-    \small #(string-append "Version " (lilypond-version) ", lilypond.org")
-  }
+  revision = "Revision 1"
+  date = "2017/4/14"
 }
 
 \paper {
@@ -26,7 +22,6 @@ crr = \change Staff = "rr"
 }
 
 global = {
-  \numericTimeSignature
   \key aes \major
   \time 4/4
   \tempo 4 = 141
@@ -504,10 +499,6 @@ pedal = {
       \new Dynamics = "pedal" \pedal
     >>
   >>
-  \layout {
-    %system-count = 5
-  }
-  \midi {
-    %\tempo 8=195
-  }
+  \layout {}
+  \midi {}
 }
