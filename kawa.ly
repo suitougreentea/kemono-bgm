@@ -7,7 +7,7 @@ cright = \change Staff = "right"
 
 \header {
   title = "10分間耐久のやつ"
-  revision = "Revision 1"
+  revision = "Revision 2"
   date = "2017/4/14"
 }
 
@@ -25,10 +25,8 @@ global = {
   }
 
   s1*4
-  \bar "||"
   \time 2/4
   s2
-  \bar "||"
   \time 4/4
 
   s1*8

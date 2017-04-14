@@ -8,7 +8,7 @@ cright = \change Staff = "right"
 
 \header {
   title = "最後のやつ"
-  revision = "Revision 1"
+  revision = "Revision 2"
   date = "2017/4/14"
 }
 
@@ -88,7 +88,7 @@ center = << \global \relative c {
   << { e4. fis8 a e d a  } \\ { <a e'>8 a16 cis ~ cis a <d fis>8 ~ q4 fis, } >> |
   r8 a16 <cis e> ~ << { \voiceTwo q a <cis fis b>8 fis,16 cis' e8 <cis fis a>8 fis, } \new Voice { \voiceOne e'8 b' ~ b4 a } >> \oneVoice
   r8 a,16 cis ~ cis a <cis fis a>8 ~ << { \voiceTwo q4 fis, } \new Voice { \voiceOne cis''8 a e a, } >> \oneVoice
-  r8 b16 <d g> ~ q[ b] <cis a' cis>8 << { <d g d'>4 <b b'>8 <d a'> } \\ { d16 b d8 e g } >> |
+  r8 b16 <d g> ~ q[ b] <cis a' \parenthesize cis>8 << { <d g \parenthesize d'>4 <b b'>8 <d a'> } \\ { d16 b d8 e g } >> |
   r8 a,16 <d e> ~ q[ a] <cis fis a \parenthesize cis>8 << { <d a' \parenthesize d>4 <a a'>8 <b g'> } \\ { d16 a d8 e fis } >>
   r8 b,16 <d g> ~ q[ b] <d fis a \parenthesize d>8 << { <e g b \parenthesize e>4 <b b'>8 <d a'> } \\ { e16 b d8 e g } >>
   r8 a,16 \tieDown <cis e> ~ << { \voiceTwo q a e'8 <fis a>8 a, <e' g> a, } \new Voice { g'4 <fis a> <e g> } >> \oneVoice \tieNeutral
@@ -124,7 +124,7 @@ left = << \global \relative c {
 } >>
 
 dynamics = {
-  s1\mf s1*11
+  s1\mf s1*10 s2 s\>
   s1\mp s s s2. s4\<
   s1\mf\cresc s s\f s4. s8\ff s2
   s1*8
@@ -150,7 +150,7 @@ pedal = {
   s\sustainOff\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn
   s\sustainOff\sustainOn s s\sustainOff\sustainOn s
   s\sustainOff\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn
-  s2\sustainOff\sustainOn s8\sustainOff\sustainOn s\sustainOff\sustainOn s s\sustainOff\sustainOn s1
+  s2\sustainOff\sustainOn s8\sustainOff\sustainOn s\sustainOff\sustainOn s s\sustainOff\sustainOn s2 s\sustainOff\sustainOn
 
   s1\sustainOff
   \set Dynamics.pedalSustainStyle = #'text
