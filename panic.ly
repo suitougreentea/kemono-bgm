@@ -59,15 +59,12 @@ global = {
   \tempo 4=158
   \compoundTime
   s1 s2 | s1 s2 |
-  \bar "||"
   \normalTime
   s1*4
 
   s1*8
-  \bar "||"
   \compoundTime
   s1.*8
-  \bar "||"
   \normalTime
   s1*10
   \bar "|."
@@ -87,7 +84,7 @@ right = << \global \relative c'' {
 
   r2 \acciaccatura eis,8 fis2( d4-.) r | \acciaccatura dis8 e4.( g8 fis\prall e d c b4 d8-.) r |
   r4 \acciaccatura cis8 d2( e4 cis-.) r | \acciaccatura { d16 e } d4.( e8 f e\prall d c a4 cis8-.) r |
-  r4 \acciaccatura e8 fis2( g8 a d,4-.) r | c8( d e g \once \override Script.avoid-slur = #'inside fis\prall e d c b4 d8-.) r |
+  r4 \acciaccatura eis8 fis2( g8 a d,4-.) r | cis8( d e g \once \override Script.avoid-slur = #'inside fis\prall e d c b4 d8-.) r |
   r4 \acciaccatura cis8 d2( e4 cis-.) r | \acciaccatura { d16 e } d4.( e8 f e\prall d c a4 cis8-.) r |
 
   << {
@@ -166,7 +163,6 @@ globala = {
   \tempo 4=158
   \compoundTime
   s1 s2 | s1 s2 |
-  \bar "||"
   \normalTime
   s1*5
   \bar "|."
