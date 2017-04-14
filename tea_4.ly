@@ -106,7 +106,7 @@ rr = << \global \relative c'' {
   <c ees>4 <bes des>8 <aes c> <g bes> <f aes>-.) r <g bes>( |
   <c, c'>4) r e8. aes16 g8-. a,16[ b] |
 
-  <aes' c>4( \acciaccatura { bes16 c } <g bes>8 <f aes> <d g> f-.) r g( |
+  <c aes' c>4( \acciaccatura { bes'16 c } <g bes>8 <f aes> <d g> f-.) r g( |
   aes4 g8 f g aes8-.) \ottava 1 r <g, bes>( |
   <aes c>4 <g bes>8 <f aes> g f des g |
   f4) \ottava 0 r r2 |
@@ -199,7 +199,7 @@ rl = << \global \relative c' {
   ees4 des8 c bes aes-.) r bes |
   \tuplet 3/2 { c,8( des d } f-.) r e8. aes16 g8-. a,16[ b] |
 
-  <c c'>4( bes'8 aes <b, g'> f'-.) r g( |
+  c4( bes'8 aes <b, g'> f'-.) r g( |
   <des aes'>4 g8 f <c g'> aes'-.) \ottava 0 r4 |
   r4 <c,, f>8-. r \acciaccatura { bes'16 des } <g, b d>8( f <des f> g |
   <f aes>4) r <ges bes>8.( <f aes>16 <e g>8. <ees ges>16 |
