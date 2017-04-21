@@ -21,8 +21,8 @@ albs = #(define-music-function
   title = "二人でお茶を"
   subtitle = \markup { \center-column { \normal-text \italic "Completed version" \bold \italic "Faithful copy for 4 hands" } }
   composer = \markup \override #'(baseline-skip . 2.5) \right-column { "Original song by Vincent Youmans" "Performed by Edward Johnson" }
-  revision = "Revision 0.9"
-  date = "2017/4/20"
+  revision = "Revision 1"
+  date = "2017/4/22"
 }
 
 \paper {
@@ -83,11 +83,11 @@ rr = << \global \relative c'' {
     <aes c>4 <g bes>8 <f aes> \voiceOne g f-.) r g( |
     aes1) |
      } \new Voice {
-    \voiceTwo s2 <b, d>( | <bes des> <bes c>8) r s4 | s2 \acciaccatura { bes16 des } <b d>4( <bes des> | <c f>2) r2 |
+    \voiceTwo s2 <b, d>( | <bes des> <bes c>8) r s4 | s2 \acciaccatura { bes16 des } \shape #'((0 . -2) (0 . -1.5) (0 . 0) (0 . 0)) Slur <b d>4( <bes des> | <c f>2) r2 |
   } >> \oneVoice
 
   << { \voiceOne \ottava 1 f4( g8. aes16 bes8. c16 des4 |
-       ees8-.) \oneVoice r \voiceOne ees4 ~ ees8. des16( c8. bes16 |
+       ees8-.) \oneVoice r \voiceOne ees4 ~ ees8. \shape #'(() ((0 . 2) (0.7 . 1.7) (0 . 0.5) (0 . 0))) Slur des16( c8. bes16 |
        des8-.) r des4 ~ des8. c16( bes8. aes16 |
      } \new Voice {
        \voiceTwo <aes, des>8-. r r4 <ees' g>8-. r r4 | bes'8-. s aes4 ~ aes2 |
@@ -137,7 +137,7 @@ rr = << \global \relative c'' {
   } >>
   \ottava 0 \oneVoice
 
-  aes'4.( f8 g4. f8 | aes4 \acciaccatura { f'16 ees des bes } aes8 f g4.) c8( |
+  \shape #'((0 . -3.5) (0 . 0.8) (0 . 0.8) (0 . -3.5)) Slur aes'4.( f8 g4. f8 | aes4 \acciaccatura { f'16 ees des bes } aes8 f g4.) c8( |
   <aes, ees' aes>2) \tuplet 3/2 { <bes f'>8-. q-. <aes des>-. } \tuplet 3/2 { <des, f bes>-.[ r <aes' des>-.] } |
   \tuplet 3/2 { <e c'>-. q-. <d g>-. } \tuplet 3/2 { <c ees>4 <f a c>8-. } \tuplet 3/2 { <f aes bes d>8-. <e g bes>-. <f aes bes d>-. } r4 |
 
@@ -190,7 +190,7 @@ rr = << \global \relative c'' {
 
   <c, f c'>8-.) r \acciaccatura { f16 g a b } q8-.[ r16 a]( <b, f' b>8-.) r \acciaccatura ais8 q-.[ r16 a']( |
   <c, f c'>8-.)[ r16 g'(] q8-.)[ r16 a]( <b, f' b>8-.) r <b dis g b>4
-  <e g c e>1 | <ees g bes des ees>2 \ottava 0 r2 |
+  <e g c e>1-> | <ees g bes des ees>2 \ottava 0 r2 |
 
   \key aes \major
   aes,4.( f8 g4. f8 \acciaccatura g | aes4. f8 g4.) ees8( |
@@ -214,7 +214,7 @@ rr = << \global \relative c'' {
   } >>
   \ottava 0 \oneVoice
 
-  \shape #'(() ((0 . 3) (0 . 0) (0 . 0) (0 . 0))) Slur aes'4.( f8 g4. f8 | aes4 \acciaccatura { f'16 ees des bes } aes8 f g4.) c8( |
+  \shape #'(((0 . 0) (0 . 0) (0 . 1) (0 . 1)) ((0 . 3) (0 . 0) (0 . 0) (0 . 0))) Slur aes'4.( f8 g4. f8 | aes4 \acciaccatura { f'16 ees des bes } aes8 f g4.) c8( |
   <aes, ees' aes>8) r r4 r2 | r4 \ottava 1 \acciaccatura { ees''16 f } \tuplet 3/2 { <g, ees'>8-. d'-. ees-. } <aes, c ees aes>->\arpeggio \ottava 0 r r4
 } >>
 
@@ -222,7 +222,7 @@ rl = << \global \relative c' {
   r4 <f aes des>8-. r <g bes ees>-. <aes c f>-. r <bes des g>-. | r2 r4 r8 d-. |
 
   << {
-    \voiceOne ees4( des8 c bes aes-.) r \shape #'((0 . 3) (0 . 3) (0 . 3) (0 . 3)) Slur bes( | c4 bes8 aes bes c-.) r des(
+    \voiceOne ees4( des8 c bes aes-.) r \shape #'((1 . 1.5) (0.7 . 1.5) (0.3 . 1.5) (0 . 1.5)) Slur bes( | c4 bes8 aes bes c-.) r des(
     ees4 des8 c bes aes-.) r bes( | c2)
      } \new Voice {
     \voiceTwo r4 <ees, aes>8-. r r4 <des ees>8-. r | r4 <c ees>8-. r r4 <des ees>8-. r |
@@ -254,7 +254,7 @@ rl = << \global \relative c' {
   r4 \acciaccatura { f''16 ees des } bes8-. r r4 \acciaccatura d8 <bes ees>8-. r |
   r4 \acciaccatura { f''16 ees des } bes8-. r r4 \acciaccatura d,8 <bes ees>8-. r |
   r4 \acciaccatura { ees16 b c } aes8-. r r4 \acciaccatura g8 aes-. r |
-  r4 << { \acciaccatura { ees''16 c bes } aes8-. } \\ { aes,8-. } >> r r4 aes8-. r |
+  r4 \acciaccatura { ees''16 c bes } aes8-. r r4 aes,8-. r |
 
   r4 \acciaccatura { f'16 ees c } des8-. r r4 \acciaccatura { g'16 f c } des8-. r |
   r4 \acciaccatura { f,16 ees c } des8-. r r4 \acciaccatura { g'16 f c } des8-. r |
@@ -274,9 +274,9 @@ rl = << \global \relative c' {
   } >> \oneVoice
   \tuplet 3/2 { <g c e>8-. <c dis fis>-. <c e g>-. } <e g a>8-. r \acciaccatura { b'16 bes a } <e g c>8-.[ r16 <dis g b>-.] <e g c>8-. r |
   << {
-    \voiceOne <ees g des'>8-. g16[ d] \oneVoice \tuplet 3/2 { ees8-. g-. c ~ } \tuplet 3/2 { c b-. fis-. } \tuplet 3/2 { f-.[ r bes-.] }
+    \voiceOne <ees g des'>8-. g16[ d] \tuplet 3/2 { ees8-. g-. c ~ } \oneVoice \tuplet 3/2 { c b-. fis-. } \tuplet 3/2 { f-.[ r bes-.] }
      } \new Voice {
-    \voiceTwo \shape #'((0 . 9) (0 . 5) (0 . 8) (0 . 5)) Slur des,4( \clr \voiceOne c b bes)
+    \voiceTwo \shape #'((0 . 9) (0 . 7) (0.5 . 10) (0.5 . 5)) Slur des,4( c \clr \voiceOne b bes)
   } >>
 
   \key aes \major
@@ -286,7 +286,7 @@ rl = << \global \relative c' {
   r4 \acciaccatura { g16 aes bes } aes8-. <aes c>-. <c' f>16-. <bes ees>-. <aes c>8 << { <ees bes'>16-.[ aes-.] } \\ { aes,16-.[ b-.] } >> r8 |
 
   r4 <bes des>8-. r r4 <bes des>8-. r |
-  r4 << { \acciaccatura { a16 bes c } des8-. } \\ { \acciaccatura { e,16 f g } aes8-. } >> r r4 \clr \acciaccatura { d,,16 ees c' } \crl <bes des ees>8-. r |
+  r4 << { \acciaccatura { a16 bes c } des8-. } \\ { \acciaccatura { e,16 f g } aes8-. } >> r r4 \clr \acciaccatura { \shape #'((0 . -6) (0 . -5) (1.7 . -6.6) (-0.2 . -4.2)) Slur \slurUp d,,16 ees c' } \crl \slurNeutral <bes des ees>8-. r |
   r4 <ges' bes>8-. r r4 q8-. r | c8-. r \acciaccatura ees <a, a'>-. r r4 <a, c f>8-. r |
 
   r4 \acciaccatura <ees' ges c>8 <des f bes>-. r r4 <ees ges bes>8-. r |
@@ -323,12 +323,12 @@ rl = << \global \relative c' {
   r4 \acciaccatura { f'''16 ees des } bes8-. r r2 |
   r4 <bes, des>8-. r r4 \acciaccatura d8 <bes ees>-. r |
   r4 \acciaccatura { ees16 b c } aes8-. r r4 \acciaccatura g8 aes-. r |
-  r4 << { \acciaccatura { ees''16 c bes } aes8-. } \\ { aes,8-. } >> r r4 aes8-. r |
+  r4 \acciaccatura { ees''16 c bes } aes8-. r r4 aes,8-. r |
 
   r4 \acciaccatura { f'16 ees c } des8-. r r4 \acciaccatura { g'16 f c } des8-. r |
   r4 \acciaccatura { f,16 ees c } des8-. r r4 \acciaccatura { g'16 f c } des8-. r |
   r4 \tuplet 3/2 { <ees,, aes>8-.[ r <f bes>-.] } \tuplet 3/2 { <aes c>-. <ees aes>-. <aes c>-. } \tuplet 3/2 { <aes c ees>-.[ r <c f>-.] } |
-  r4 <c, ees aes>8-. r r4 q8-. r16 gis'( |
+  r4 <c, ees aes>8-. r r4 <c f aes>8-. r16 gis'( |
 
   \key c \major
   a4) ~ a8. fis16( g4) ~ g8. gis16( | a4) ~ a8. fis16( g4) ~ << { \voiceTwo g8. fis16_( } \new Voice { \voiceOne <b d>8-. r } >> \oneVoice |
@@ -337,7 +337,7 @@ rl = << \global \relative c' {
     r16 \shape #'(((0 . -1) (1 . -1) (0 . -7) (-0.5 . -5))) Slur b( c e \crr \hideNotes \once \override NoteColumn.ignore-collision = ##t b'8) \unHideNotes
   } \new Voice { s1 | s4 \voiceOne r4 r2 } >>
 
-  << { \voiceTwo a,4) ~ a8. aes16( g4) ~ g8. gis16( | a4) ~ a8. fis16( g4) ~ g8. \shape #'((0 . 6) (1 . 4.5) (1 . 6.5) (0 . 3)) Slur f16( } \new Voice {
+  << { \voiceTwo a,4) ~ a8. aes16( g4) ~ g8. gis16( | a4) ~ a8. fis16( \shape #'((0 . -0.5) (0 . -1) (0 . -1) (0 . -0.5)) Tie g4) ~ g8. \shape #'((0 . 6) (1 . 4.5) (1 . 6.5) (0 . 3)) Slur f16( } \new Voice {
     \voiceOne r4 \tuplet 3/2 { <c' f>8-. q r } r4 \acciaccatura ais8 <b d f>8-. r |
     \tuplet 3/2 { r <e f a>-. <d f a>-. } <c f a>-. r r4 f,8-. r
   } >> \oneVoice
@@ -347,9 +347,9 @@ rl = << \global \relative c' {
     \tuplet 3/2 { <g c e>8-. <c dis fis>-. <c e g>-. } <e g a>8-. r \acciaccatura { g16 ges f } <e g c>8-.[ r16 <dis g b>-.] <e g c>8-. r |
   } >> \crl
   << {
-    \voiceOne <ees g des'>8-. g16[ d] \oneVoice \tuplet 3/2 { ees8-. g-. c ~ } \tuplet 3/2 { c b-. fis-. } \tuplet 3/2 { f-.[ r bes-.] }
+    \voiceOne <ees g des'>8-. g16[ d] \tuplet 3/2 { ees8-. g-. c ~ } \oneVoice \tuplet 3/2 { c b-. fis-. } \tuplet 3/2 { f-.[ r bes-.] }
      } \new Voice {
-    \voiceTwo \shape #'((0 . 9) (0 . 5) (0 . 8) (0 . 5)) Slur des,4( \clr \voiceOne c b bes)
+    \voiceTwo \shape #'((0 . 9) (0 . 7) (0.5 . 10) (0.5 . 5)) Slur des,4( c \clr \voiceOne b bes)
   } >>
 
   \key aes \major
@@ -360,14 +360,14 @@ rl = << \global \relative c' {
   \ottava 1 << { <c'' f>16-. <bes ees>-. <aes c>8-. <ees bes'>16-. <b aes'>-. ees8-. } \\ { <c f>16-. <bes ees>-. <aes c>8-. aes,8-. r } >> \ottava 0 |
 
   r4 <bes des>8-. r r4 <bes des>8-. r |
-  r4 << { \acciaccatura { a16 bes c } des8-. } \\ { \acciaccatura { e,16 f g } aes8-. } >> r r4 \clr \acciaccatura { d,,16 ees c' } \crl <bes des ees>8-. r |
+  r4 << { \acciaccatura { a16 bes c } des8-. } \\ { \acciaccatura { e,16 f g } aes8-. } >> r r4 \clr \acciaccatura { \shape #'((0 . -6) (0 . -5) (1.7 . -6.0) (-0.2 . -4.2)) Slur \slurUp d,,16 ees c' } \slurNeutral \crl <bes des ees>8-. r |
   r4 <ges' bes>8-. r r4 q8-. r | c8-. r \acciaccatura ees <a, a'>-. r r4 <a, c f>8-. r |
 
   r4 \acciaccatura <ees' ges c>8 <des f bes>-. r r4 <ees ges bes>8-. r |
   r4 \acciaccatura e8 <f a>-. r r4 \acciaccatura ges8 <f a>-. r |
   ges2( f | fes1) |
 
-  << { aes8-. ees'16[ bes] <c, aes'>8-. r g'-. r \tuplet 3/2 { <b, f' g>-. fis'-. g-. } | aes8-. r <bes, f'>-. r } \\ { ees2( d | des) } >> \tuplet 3/2 { r8 <g c>-. <f bes>-. } <des ees g>-. r |
+  << { aes8-. ees'16[ bes] <c, aes'>8-. r g'-. r \tuplet 3/2 { <b, f' g>-. fis'-. g-. } | aes8-. r <bes, f'>-. r } \\ { \albs -2 0 ees2( d | des) } >> \tuplet 3/2 { r8 <g c>-. <f bes>-. } <des ees g>-. r |
   \clef bass
   r4 << { \voiceOne aes8.( bes16 c8. ees16 \oneVoice <aes, bes f'>4 ~ } \new Voice { \voiceTwo \mergeDifferentlyDottedOn aes4 ~ \mergeDifferentlyDottedOff aes } >>
   <aes bes f'>4) \clef treble <ees' bes' des>8-. r r2 |
@@ -418,14 +418,14 @@ lr = << \global \relative c' {
   << { \voiceTwo s1 | r2 r4 r8 b^( } \new Voice { \voiceOne ees1-> ~ | ees } >> | \oneVoice
 
   << {
-    \voiceOne c4 bes8 aes g f-.) r g( | aes4 g8 f g aes-.) r8 bes( |
+    \voiceOne c4 bes8 aes g f-.) r \shape #'((0.8 . -0.8) (0.4 . -0.5) (0 . 0) (0 . 0.2)) Slur g( | aes4 g8 f g aes-.) r8 bes( |
     c4 bes8 aes g f-.) r g( | aes4) r
      } \new Voice {
     \voiceTwo ees1 | \acciaccatura { c16 des d } ees1 | \acciaccatura f8 ees1 | \acciaccatura { c16 des d } ees2
   } >> \oneVoice e4_( f8. g16 |
 
   << { \voiceTwo aes4 g8 f d2 | des c) } \new Voice { \voiceOne r4 <c' f>8-. r r4 \acciaccatura <fis, ais>8 <g b>-. r | r4 \acciaccatura a8 <bes des>-. r r4 <g bes c>8-. r } >> |
-  << { \voiceOne r4 <c f>8-. r r4 f,8-. r | r8. f16( aes8. c16 bes8. aes16 g8. ges16) } \new Voice { \oneVoice aes4_( g8 f d4 \voiceTwo des | c2) <ees c'> } >>|
+  << { \voiceOne r4 <c f>8-. r r4 f,8-. r | r8. f16( aes8. c16 bes8. aes16 g8. ges16) } \new Voice { \oneVoice \albs -1 0 aes4_( g8 f d4 \voiceTwo des | c2) <ees c'> } >>|
 
   << {  \voiceTwo \shape #'(((0 . 0) (0 . 0) (0 . 1) (0 . -3)) ((0 . 6) (0 . 6) (0 . 7.5) (0 . 4))) Slur f2( g2 | ees aes \cll \voiceOne fes ees) } \new Voice {
     \voiceOne r4 <aes des>8-. r r4 <bes des ees>8-. r |
@@ -450,7 +450,7 @@ lr = << \global \relative c' {
      } \new Voice {
     \voiceOne
     r4 <bes' des f>8-. r r4 <bes des ees>8-. r | r4 <bes des f>8-. r r4 <bes des ees>8-. r |
-    r4 <c ees>8-. r r4 <c ees>8-. r | r4 <c ees>8-. r r4 \acciaccatura b8 <c ees>8-. r |
+    r4 <c ees>8-. r r4 <c ees>8-. r | r4 <c ees aes>8-. r r4 \acciaccatura b8 <c ees>8-. r |
   } >>
 
   << {
@@ -474,10 +474,10 @@ lr = << \global \relative c' {
        \voiceOne r4 \tuplet 3/2 { <c f>8-. q r } r4 \acciaccatura ais8 <b d f>8-. r | \tuplet 3/2 { r8 e-. d-. } <c f>-. r r4 b8-. r |
      } \new Voice {
        \voiceTwo a2( g | a g) |
-       e8-. r g4( c b) | <ees g>2( <d fis>4 <des f>) |
+       e8-. r g4( c b) | \oneVoice \shape #'((0 . 1.5) (0 . 0.2) (-0.5 . -0.5) (0 . 0)) Slur <ees g>2_( \voiceTwo <d fis>4 <des f>) |
      } \new Voice {
        s1 | s2. \voiceFour \shape #'((0 . -1) (0 . -1) (0 . 0) (0 . 0)) Slur dis4_( |
-       \voiceOne e1) | r4
+       \voiceOne e1) |
   }>>
 
   \key aes \major
@@ -508,8 +508,8 @@ lr = << \global \relative c' {
     \voiceTwo des,2( c | f ees) | \albs -2 0 ges( f | fes1) |
   } >>
 
-  << { \voiceOne aes4.( f8 g4. f8 | aes4. f8 g4.) c8 } \new Voice { \voiceTwo <c, ees>2( <b d> | <bes des>4) r des8-. r r4 } >> \oneVoice |
-  << { c'4( bes \voiceOne aes2) } \new Voice { s2. \voiceTwo f8-. r } >> \oneVoice e4( a bes) \tuplet 3/2 { b8-.-> c-.-> d-.-> }
+  << { \voiceOne \shape #'((0 . 0.7) (0 . 0.7) (0 . 0.7) (0 . 0.7)) Slur aes4.( f8 g4. f8 | aes4. f8 g4.) c8 } \new Voice { \voiceTwo <c, ees>2( <b d> | <bes des>4) r des8-. r r4 } >> \oneVoice |
+  << { c'4( bes \voiceOne aes2) } \new Voice { s2 \voiceTwo r4 f8-. r } >> \oneVoice e4( a bes) \tuplet 3/2 { b8-.-> c-.-> d-.-> }
 
   << { \voiceTwo s1 | r2 r4 r8 b^( } \new Voice { \voiceOne ees1-> ~ | ees } >> | \oneVoice
 
@@ -517,7 +517,7 @@ lr = << \global \relative c' {
     \voiceOne
     c16) ees c ees <bes aes'> des aes c g bes <f aes>8-. <des' ees>-. g,16[ bes] |
     aes ees' aes, ees' <g, c> ees' f, ees' g, ees' aes,8-. <des ees>-. bes16[ des] |
-    c des d f <bes, ees aes> des aes c g bes <f aes>8-. <des' ees>-. g,16[( <f bes>]
+    c des d f <bes, ees aes> des aes c g bes <f aes>8-. <des' ees>-. \shape #'((0 . 5) (0 . 5) (2.5 . 7) (1 . 5)) Slur g,16[_( <f bes>]
     \cll \voiceOne ees2) \clr \oneVoice \shape #'((0 . 0) (0 . 0) (0 . 1) (0 . 1)) Slur e4( f8. g16
      } \new Voice {
     \voiceTwo ees1 | \acciaccatura d8 ees1 | \acciaccatura d8 ees1 | \oneVoice r4 <c' ees aes>8-. r
@@ -549,18 +549,18 @@ lr = << \global \relative c' {
 
   << {
     \voiceTwo
-    aes4.( f8 g4. f8 | aes4. f8 g4.) ees8( | g4. ees8 f4. ees8 | \acciaccatura aes,8 g'4. ees8 f4.) ees8( |
+    aes4.( f8 g4. f8 | aes4. f8 g4.) ees8( | g4. ees8 f4. ees8 | \acciaccatura aes,8 g'4. ees8 f4.) \shape #'((-0.5 . -2) (-0.5 . -2) (0 . -2) (0 . -2)) Slur ees8( |
      } \new Voice {
     \voiceOne
     r4 <bes' des f>8-. r r4 <bes des ees>8-. r | r4 \acciaccatura { f'16 ees des } <bes f'>8-. r r4 <bes des ees>8-. r |
-    r4 <c ees>8-. r r4 <c ees>8-. r | r4 <c ees>8-. r r4 \acciaccatura b8 <c ees>8-. r |
+    r4 <c ees>8-. r r4 <c ees>8-. r | r4 <c ees aes>8-. r r4 \acciaccatura b8 <c ees>8-. r |
   } >>
 
   << {
     \voiceTwo aes4. f8 g4. f8 | \acciaccatura bes,8 aes'4. f8 g4.) \voiceOne r8 |
     \voiceTwo \albs -2 0 ees2( f | \oneVoice ees f4 ~ f8.) \noBeam \clef treble gis16_( |
      } \new Voice {
-    \voiceOne r4 <bes des f>8-. r r4 <bes des ees>8-. r | r4 <bes des f>8-. r r4 <bes des ees>8-. \noBeam \voiceTwo ees,8^( |
+    \voiceOne r4 <bes des f>8-. r r4 <bes des ees>8-. r | r4 <bes des f>8-. r r4 <bes des ees>8-. \noBeam \voiceTwo \shape #'((0 . -0.5) (0 . -0.5) (0 . 0) (0 . 0)) Slur ees,8^( |
     \voiceOne c'2.) <c f>8-. r
   } >>
 
@@ -575,14 +575,14 @@ lr = << \global \relative c' {
 
   << {
        \voiceTwo a4) ~ a8. aes16( g4) ~ g8. gis16( | a4) ~ a8. fis16( g4) ~ g8. f16(  |
-       e8-.) r g4( c b) | <ees g>2( <d fis>4 <des f>) |
+       e8-.) r g4( c b) | \oneVoice \shape #'((1 . 2) (1 . 2) (-0.5 . -0.5) (0 . 0)) Slur <ees g>2_( \voiceTwo <d fis>4 <des f>) |
      } \new Voice {
-       \voiceOne r4 \tuplet 3/2 { <c f>8-. q r } r4 <b f'>8-. r | \tuplet 3/2 { r8 e-. d-. } <c f>-. r r4 b8-. r |
+       \voiceOne r4 \tuplet 3/2 { <c f>8-. q r } r4 <b f'>8-. r | \tuplet 3/2 { r8 e-. d-. } <c f>-. r r4 \once \override NoteColumn.force-hshift = 0.5 b8-. r |
      } \new Voice {
-       s1 | s2. \voiceFour dis4^( |
-       \voiceOne e1) | r4
+       s1 | s2. \voiceThree \once \override NoteColumn.force-hshift = 0 \shape #'((0.6 . 1.2) (0.5 . 0.7) (0.5 . 0) (0 . 0)) Slur dis4^( |
+       \voiceOne e1) |
      } \new Voice {
-       s1*3 | \voiceFour \once \override NoteColumn.force-hshift = #0.5 <g, bes>8-. r r4
+       s1*3 | \voiceFour <g, bes>8-. \once \override Rest.staff-position = -12 r \once \override Rest.staff-position = -14 r4
   }>>
 
   \key aes \major
@@ -614,7 +614,7 @@ lr = << \global \relative c' {
   } >>
 
   << { \voiceOne aes4.( f8 g4. f8 | aes4. f8 \oneVoice g4.) c8 } \new Voice { \voiceTwo \albs -2 0 <c, ees>2( <b d> | <bes des>8-.) r r4 } >> |
-  c'8 r f,8.( ees16 ees4 d ~ |
+  c'8 r f,8.( e16 ees4 d ~ |
   d) r4 c'8->\arpeggio r r4 |
 } >>
 
@@ -742,7 +742,9 @@ pl = { s4.\sustainOn s8\sustainOff s2 }
 ps = { s8\sustainOn s\sustainOff s2. }
 
 pedal = {
-  \override SustainPedal.extra-offset = #'(0.1 . 0)
+  \override SustainPedal.extra-offset = #'(0.5 . 0)
+  \override VerticalAxisGroup.staff-affinity = #UP
+  \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1
   \pn \pn
   \pn s1*3
   s1 \pn s1 \pn
@@ -784,32 +786,27 @@ pedal = {
 
 pedaluc = {
   \override UnaCordaPedal.self-alignment-X = -1
-  \override VerticalAxisGroup.nonstaff-nonstaff-spacing.basic-distance = 3
-
+  \override VerticalAxisGroup.staff-affinity = #UP
+  \override VerticalAxisGroup.nonstaff-nonstaff-spacing.padding = 1
+  \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1
   s1\unaCorda s4 s\treCorde s2
   s1^"use arpeggios freely" s1*7
-
   s1*7 s2. s4\unaCorda
 
   s1*6 s1\treCorde s1
-
   s1*7 s2. s4\unaCorda
 
   s1*5 s2. s4\treCorde s1*2
-
   s1*7 s2. s4\unaCorda
 
   s1 s2. s4\treCorde
   s1*8
-
   s1*7 s2 s8 s\unaCorda s4
 
   s1*5 s2. s4\treCorde s1*2
-
   s1*7 s2. s4\unaCorda
 
   s1*5 s2. s4\treCorde s1*2
-
   s1*8
 }
 
@@ -840,12 +837,7 @@ pedaluc = {
       \new Dynamics = "pedal" \pedal
     >>
   >>
-  \layout {
-    \context {
-      \Voice
-      % \override Slur.details.head-slur-distance-factor = 200
-    }
-  }
+  \layout {}
   \midi {}
 }
 
