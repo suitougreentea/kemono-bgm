@@ -26,6 +26,7 @@ global = {
 }
 
 right = << \global \relative c' {
+  \clef treble
   r8 <g c e> q q <a c f> r q r | <g b d> q r <g c e> r2 |
   r8 <g c e> q q <a c f> r q r | << { r2 <c' c'>8. <b b'>16 ~ q8 <a a'> } \\ { <g, b d> q r <g c e> r2 }>>
   <g' g'>1 | r2 <a a'>8. <g g'>16 ~ q8 <e e'> |
@@ -35,7 +36,7 @@ right = << \global \relative c' {
 
   << {
     r2 e8(^\markup \italic "m.g." f g a | g2 c,) | r2 c8( d e f | e2 g) |
-    s2 e8 f g a | c4 b16 c d8 ~ d g, \oneVoice <g b d g>4 |
+    s2 e8 f g a | c4 b16 c d8 ~ d g, \oneVoice <g c d g>4 |
     <e a d e>4. <a d e a>8 ~ q2 |
      } \\ {
     <f, g c>8\arpeggio b g c b g c b | g c b g c b g d |
@@ -68,7 +69,7 @@ right = << \global \relative c' {
   r8 <a d fis>8 q q <b d g> r q r |\break <a cis e>8 q r <a d fis> r2 |
   r8 <a d fis>8 q q <b d g> r q r | <a cis e>8 q r <a d fis> r2 |
   r4^\markup \italic "riten." \grace { cis'16 cis' ~ } <cis, cis'>4-- <d d'>-- <e e'>-- |
-  <a e' a>1\arpeggio\fermata |
+  <a cis a'>1\arpeggio\fermata |
 } >>
 
 center = << \global \relative c {
@@ -99,6 +100,7 @@ center = << \global \relative c {
 } >>
 
 left = << \global \relative c {
+  \clef bass
   c1 ~ | c2 ~ c8 g-. a( g-.) | <c, c'>1 ~ | q2 ~ q8 g'8 a g |
   c8 <g' c e> q q <a c f> r q r | <g b d> q r <g c e> r8 g, a g |
   c8 <g' c e> q q <a c f> r q r | <g b d g> q r <g c e> r8 g, a g |
@@ -113,14 +115,14 @@ left = << \global \relative c {
   } >>
 
   \key d \major
-  <d,, d'>1 | <d' d'> | <fis, fis'> | q |
-  <g g'> | <fis fis'> | <e e'> | <a a'> |
+  <d,, d'>1 | <d' d'> | <fis, fis'> | <fis' fis'> |
+  <g, g'> | <fis fis'> | <e e'> | <a a'> |
   <d, d'> | <d' d'> | <fis, fis'> | q |
   <g g'> | <fis fis'> | <e e'> | <a a'> |
   r2 <bes  bes'>8 <c c'> r q ~ | q1 |
 
   d'1 ~ | d2 ~ d8 a-. b( a-.) | <d, d'>1 ~ | q2 ~ q8 a'-. b( a-.) |
-  <d, d'>4-- cis''-- d-- e-- | <d, a' cis fis>1\arpeggio\fermata
+  <d, d'>4-- cis''-- d-- e-- | <d, a' e' fis>1\arpeggio\fermata
 } >>
 
 dynamics = {
@@ -135,7 +137,7 @@ dynamics = {
 }
 
 pedal = {
-  s1-\markup \italic "col Ped." s1*3
+  s1^\markup \italic "col Ped." s1*3
   s2\sustainOn s2\sustainOff s1
   s2\sustainOn s2\sustainOff s1
   s2\sustainOn s2\sustainOff s1
@@ -163,17 +165,11 @@ pedal = {
     \new PianoStaff \with {
       connectArpeggios = ##t
     } <<
-      \new Staff = "right" \with {
-        midiInstrument = "acoustic grand"
-      } \right
-      \new Dynamics = "dynamics" \dynamics
-      \new Staff = "center" \with {
-        midiInstrument = "acoustic grand"
-      } { \clef treble \center }
-      \new Staff = "left" \with {
-        midiInstrument = "acoustic grand"
-      } { \clef bass \left }
-      \new Dynamics = "pedal" \pedal
+      \new Staff = "right" \right
+      \new PianoDynamics = "dynamics" \dynamics
+      \new Staff = "center" \center
+      \new Staff = "left" \left
+      \new PianoPedal = "pedal" \pedal
     >>
   >>
   \layout {

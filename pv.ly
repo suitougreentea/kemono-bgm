@@ -49,11 +49,11 @@ pedal = {
     \new PianoStaff \with {
     } <<
       \new Staff = "right" \with {
-        midiInstrument = "acoustic grand"
+        %midiInstrument = "acoustic grand"
       } \right
       \new Dynamics = "dynamics" \dynamics
       \new Staff = "left" \with {
-        midiInstrument = "acoustic grand"
+        %midiInstrument = "acoustic grand"
       } { \clef bass \left }
       \new Dynamics = "pedal" \pedal
     >>

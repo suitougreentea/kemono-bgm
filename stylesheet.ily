@@ -93,10 +93,50 @@
   }
 }
 
-\layout{
+\layout {
   \context {
     \Staff
     \override TimeSignature.style = #'numbered
+  }
+  \context {
+    \Dynamics
+    \name PianoDynamics
+    \alias Dynamics
+    \override VerticalAxisGroup.staff-affinity = #CENTER
+    \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1
+  }
+  \context {
+    \Dynamics
+    \name PianoPedal
+    \alias Dynamics
+    \override UnaCordaPedal.self-alignment-X = -1
+    \override VerticalAxisGroup.staff-affinity = #UP
+    \override VerticalAxisGroup.nonstaff-nonstaff-spacing.padding = 1
+    \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1
+    \override SustainPedal.extra-offset = #'(0.5 . 0)
+  }
+  \context {
+    \PianoStaff
+    \accepts PianoDynamics
+    \accepts PianoPedal
+  }
+}
+
+\midi {
+  \context {
+    \Dynamics
+    \name PianoDynamics
+    \alias Dynamics
+  }
+  \context {
+    \Dynamics
+    \name PianoPedal
+    \alias Dynamics
+  }
+  \context {
+    \PianoStaff
+    \accepts PianoDynamics
+    \accepts PianoPedal
   }
 }
 
