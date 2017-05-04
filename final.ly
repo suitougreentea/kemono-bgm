@@ -9,7 +9,7 @@ cright = \change Staff = "right"
 \header {
   title = "最後のやつ"
   revision = "Revision 2"
-  date = "2017/4/14"
+  date = "2017/5/4"
 }
 
 \paper {
@@ -117,8 +117,8 @@ left = << \global \relative c {
   \key d \major
   <d,, d'>1 | <d' d'> | <fis, fis'> | <fis' fis'> |
   <g, g'> | <fis fis'> | <e e'> | <a a'> |
-  <d, d'> | <d' d'> | <fis, fis'> | q |
-  <g g'> | <fis fis'> | <e e'> | <a a'> |
+  <d, d'> | <d' d'> | <fis, fis'> | <fis' fis'> |
+  <g, g'> | <fis fis'> | <e e'> | <a a'> |
   r2 <bes  bes'>8 <c c'> r q ~ | q1 |
 
   d'1 ~ | d2 ~ d8 a-. b( a-.) | <d, d'>1 ~ | q2 ~ q8 a'-. b( a-.) |
@@ -152,7 +152,7 @@ pedal = {
   s\sustainOff\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn
   s\sustainOff\sustainOn s s\sustainOff\sustainOn s
   s\sustainOff\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn
-  s2\sustainOff\sustainOn s8\sustainOff\sustainOn s\sustainOff\sustainOn s s\sustainOff\sustainOn s2 s\sustainOff\sustainOn
+  s2\sustainOff\sustainOn s8\sustainOff\sustainOn s\sustainOff s s\sustainOn s2 s\sustainOff\sustainOn
 
   s1\sustainOff
   \set Dynamics.pedalSustainStyle = #'text

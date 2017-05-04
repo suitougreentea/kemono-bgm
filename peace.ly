@@ -14,11 +14,12 @@ av = #(define-music-function
 
 \header {
   title = "ハァハァしないやつ"
-  revision = "Revision 1"
-  date = "2017/4/14"
+  revision = "Revision 2"
+  date = "2017/5/4"
 }
 
 \paper {
+  page-count = 2
 }
 
 global = {
@@ -29,16 +30,15 @@ global = {
   s1*8
   s1*8
   s1*8
-  \bar "||"
   \time 2/4
   s2
-  \bar "||"
   \time 4/4
   s1*8
   s2 \bar "|."
 }
 
 right = << \global \relative c'' {
+  \clef treble
   r8. b16 c8-.-- cis-.--
   << {
     d16[ d r d] r d[ r \acciaccatura cis8 d16] r8 c-.-- b-.-- g-.-- | a8[ \av 3 r16 b] r4 r2 |
@@ -90,6 +90,7 @@ right = << \global \relative c'' {
 } >>
 
 left = << \global \relative c {
+  \clef bass
   r2 |
   g8 r <d' g b>8 r16 b16 r8 b( <d g b>-.--) g,-.-- | c8 r <e g c> r16 d r8 d( <fis a d>-.--) a,-.-- |
   g8 r <d' g b>8 r16 b16 r8 b <d g b> g, | c8 r <e g c> r16 d << { r4 <fis a d>8-.-- r } \\ { r8 c-.-- b-.-- a-.-- } >> |
@@ -144,14 +145,10 @@ pedal = {
 \score {
   <<
     \new PianoStaff <<
-      \new Staff = "right" \with {
-        midiInstrument = "acoustic grand"
-      } \right
-      \new Dynamics = "dynamics" \dynamics
-      \new Staff = "left" \with {
-        midiInstrument = "acoustic grand"
-      } { \clef bass \left }
-      \new Dynamics = "pedal" \pedal
+      \new Staff = "right" \right
+      \new PianoDynamics = "dynamics" \dynamics
+      \new Staff = "left" \left
+      \new PianoPedal = "pedal" \pedal
     >>
   >>
   \layout {}

@@ -25,7 +25,7 @@ compoundTime = {
 \header {
   title = "食べないやつ"
   revision = "Revision 2"
-  date = "2017/4/14"
+  date = "2017/5/4"
 }
 
 \paper {
@@ -48,11 +48,12 @@ global = {
 }
 
 right = << \global \relative c'' {
- b8 g16 a b8 cis d e fis d <g, cis e>-. <g cis>-. r4 |
- b8 g16 a b8 cis d e fis d <cis e g>-. q-. q-. r |
- << { \oneVoice b8 g16 a b8 cis \voiceOne d e fis d | e cis r cis d b r b } \\ { s2 fis( | e d) } >> |
- <eis gis cis>8-. r r gis16 cis gis8 eis cis eis |
- <ais, fis'>8-. r r4 \acciaccatura { fis'16 a c } fis8-. <a, c fis>-. q-. r |
+  \clef treble
+  b8 g16 a b8 cis d e fis d <g, cis e>-. <g cis>-. r4 |
+  b8 g16 a b8 cis d e fis d <cis e g>-. q-. q-. r |
+  << { \oneVoice b8 g16 a b8 cis \voiceOne d e fis d | e cis r cis d b r b } \\ { s2 fis( | e d) } >> |
+  <eis gis cis>8-. r r gis16 cis gis8 eis cis eis |
+  <ais, fis'>8-. r r4 \acciaccatura { fis'16 a c } fis8-. <a, c fis>-. q-. r |
 
  \ottava 1 b'8 g16 a b8 cis d e fis d | <g, e'>-. cis-. r4 \acciaccatura { cis'16 d } e8-. cis-. r4 |
   b,8 g16 a b8 cis d e fis d | <e g>-. q-. q-. r <e' g>-. q-. q-. r |
@@ -78,6 +79,7 @@ right = << \global \relative c'' {
 } >>
 
 left = << \global \relative c {
+  \clef bass
   g8 r a r b r d r <a e'>-. q-. r4 |
   g8 r a r b r d r <a g'>-. q-. q-. r |
   << { g'2( fis e d) } \\ { r4 g,8 r r4 fis8 r | r4 e8 r r4 d8 r } >>
@@ -172,14 +174,10 @@ pedala = {
 \score {
   <<
     \new PianoStaff <<
-      \new Staff = "right" \with {
-        midiInstrument = "acoustic grand"
-      } \right
-      \new Dynamics = "dynamics" \dynamics
-      \new Staff = "left" \with {
-        midiInstrument = "acoustic grand"
-      } { \clef bass \left }
-      \new Dynamics = "pedal" \pedal
+      \new Staff = "right" \right
+      \new PianoDynamics = "dynamics" \dynamics
+      \new Staff = "left" \left
+      \new PianoPedal = "pedal" \pedal
     >>
   >>
   \header {
@@ -191,16 +189,11 @@ pedala = {
 
 \score {
   <<
-    \new PianoStaff \with {
-    } <<
-      \new Staff = "right" \with {
-        midiInstrument = "acoustic grand"
-      } \righta
-      \new Dynamics = "dynamics" \dynamicsa
-      \new Staff = "left" \with {
-        midiInstrument = "acoustic grand"
-      } { \clef bass \lefta }
-      \new Dynamics = "pedal" \pedala
+    \new PianoStaff <<
+      \new Staff = "right" \righta
+      \new PianoDynamics = "dynamics" \dynamicsa
+      \new Staff = "left" \lefta
+      \new PianoPedal = "pedal" \pedala
     >>
   >>
   \header {

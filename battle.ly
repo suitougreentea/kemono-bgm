@@ -56,12 +56,12 @@ right = << \global \relative c {
   <g d' g>8. q16 r8 <f c' f> <g d' g> q <bes f' bes> <g d' g> |
   r2 <g d' g>8 q <f c' f> <g d' g> |
   r2 <g d' g>8 q <bes f' bes> <g d' g> |
-  r2 gis'16 fis e d c bes aes f |
+  r2 gis'16 fis e d c-. bes-. aes-. f-. |
 } >>
 
 left = << \global \relative c, {
   \clef bass
-  %\set Score.skipTypesetting = ##t
+  \set Score.skipTypesetting = ##t
   g16 g' g, g' ~ g g, g'8 g,16 g' g, g' ~ g g, g'8 |
   g,16 g' g, g' ~ g g, g'8 g,16 g' g, bes' ~ bes g, bes'8 |
   g,16 g' g, g' ~ g g, g'8 g,16 g' g, g' ~ g g, g'8 |
@@ -90,7 +90,7 @@ left = << \global \relative c, {
   <g, d' g>8. q16 r d' <f, f'>8 <g d' g> q <bes f' bes>16[ c r g] |
   <g d' g>8. q16 r16 g f' g g,8 g' \tuplet 3/2 { d16 f d } bes f |
   <g d' g>8. q16 r d' <f, f'>8 <g d' g> q <bes f' bes>16[ c r g] |
-  c16[ d r g,] d'[ f r g,] gis' fis e d c bes aes f |
+  c16[ d r g,] d'[ f r g,] gis' fis e d c-. bes-. aes-. f-. |
 
 
 } >>

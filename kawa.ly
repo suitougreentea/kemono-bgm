@@ -8,7 +8,7 @@ cright = \change Staff = "right"
 \header {
   title = "10分間耐久のやつ"
   revision = "Revision 2"
-  date = "2017/4/14"
+  date = "2017/5/4"
 }
 
 \paper {
@@ -40,6 +40,7 @@ global = {
 }
 
 right = << \global \relative c''' {
+  \clef treble
   r8 a16^\markup \italic "non legato" a bes bes g8 fis16 fis a a g8 r |
   r8 e16 e f f d8 bes d g r |
   r8 <a, a'>16 q <bes bes'> q <g g'>8 <fis fis'>16 q <a a'> q <g g'>8 r |
@@ -70,6 +71,7 @@ right = << \global \relative c''' {
 } >>
 
 left = << \global \relative c {
+  \clef bass
   << <g' c>8-> \\ <c,, c'>8-> >> r r4 r4 r8 << <g'' c>8-> \\ <c,, c'>8-> >> |
   << <g'' c>8-> \\ <c,, c'>8-> >> r r4 r2 |
   << <g'' c>8-> \\ <c,, c'>8-> >> r r4 r4 r8 << <g'' c>8-> \\ <c,, c'>8-> >> |
@@ -147,14 +149,10 @@ pedal = {
     \new PianoStaff \with {
       connectArpeggios = ##t
     } <<
-      \new Staff = "right" \with {
-        midiInstrument = "acoustic grand"
-      } \right
-      \new Dynamics = "dynamics" \dynamics
-      \new Staff = "left" \with {
-        midiInstrument = "acoustic grand"
-      } { \clef bass \left }
-      \new Dynamics = "pedal" \pedal
+      \new Staff = "right" \right
+      \new PianoDynamics = "dynamics" \dynamics
+      \new Staff = "left" \left
+      \new PianoPedal = "pedal" \pedal
     >>
   >>
   \layout {}

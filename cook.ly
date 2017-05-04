@@ -8,7 +8,7 @@ cright = \change Staff = "right"
 \header {
   title = "何故かやめられないやつ"
   revision = "Revision 1"
-  date = "2017/4/14"
+  date = "2017/5/4"
 }
 
 \paper {
@@ -34,6 +34,7 @@ global = {
 }
 
 right = << \global \relative c'' {
+  \clef treble
   \partial 4 { r8 g16 g }
   g8( a-.) ais-. b-. g4-. r8 <g b>16 q |
   q8( <a c>-.) <ais cis>-. <b d>-. <g b>4-. r8 d'16 d |
@@ -82,6 +83,7 @@ right = << \global \relative c'' {
 } >>
 
 left = << \global \relative c {
+  \clef bass
   \partial 4 { r4 }
   R1 |
   r2 r4 r8 d16 d |
@@ -146,17 +148,11 @@ pedal = {
 
 \score {
   <<
-    \new PianoStaff \with {
-      connectArpeggios = ##t
-    } <<
-      \new Staff = "right" \with {
-        midiInstrument = "acoustic grand"
-      } \right
-      \new Dynamics = "dynamics" \dynamics
-      \new Staff = "left" \with {
-        midiInstrument = "acoustic grand"
-      } { \clef bass \left }
-      \new Dynamics = "pedal" \pedal
+    \new PianoStaff <<
+      \new Staff = "right" \right
+      \new PianoDynamics = "dynamics" \dynamics
+      \new Staff = "left" \left
+      \new PianoPedal = "pedal" \pedal
     >>
   >>
   \layout {}

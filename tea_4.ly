@@ -21,8 +21,8 @@ albs = #(define-music-function
   title = "二人でお茶を"
   subtitle = \markup { \center-column { \normal-text \italic "Completed version" \bold \italic "Faithful copy for 4 hands" } }
   composer = \markup \override #'(baseline-skip . 2.5) \right-column { "Original song by Vincent Youmans" "Performed by Edward Johnson" }
-  revision = "Revision 1"
-  date = "2017/4/22"
+  revision = "Revision 2"
+  date = "2017/5/4"
 }
 
 \paper {
@@ -70,6 +70,7 @@ global = {
 }
 
 rr = << \global \relative c'' {
+  \clef treble
   R1 | <c ees aes>8-. r <des f bes>8-. r <ees g c>-. <f aes des>-. r <b d>-. |
 
   <c ees>4( <bes des>8 <aes c> <g bes> <f aes>-.) r <g bes>( |
@@ -219,6 +220,7 @@ rr = << \global \relative c'' {
 } >>
 
 rl = << \global \relative c' {
+  \clef treble
   r4 <f aes des>8-. r <g bes ees>-. <aes c f>-. r <bes des g>-. | r2 r4 r8 d-. |
 
   << {
@@ -230,11 +232,11 @@ rl = << \global \relative c' {
   } >> \oneVoice r2 |
 
   << {
-    c'4^( bes8 aes \voiceOne g f-.) r g( | aes4 g8 r g aes-.) r bes( | \oneVoice c4 bes8 aes \voiceOne g f-.) r g( | \oneVoice aes2)
+    c'4^( bes8 aes \voiceOne g f-.) r g( | aes4 g8 r g aes-.) r bes( | \oneVoice c4 bes8 aes g f-.) r g( | aes2)
      } \new Voice {
-    \voiceTwo s2 d,2( | f e) | s2 r4 <bes des>8-. r |
+    \voiceTwo s2 d,2( | f e) |
   } >> \oneVoice
-  <ges' bes>8.( <f aes>16 <e g>8. <ees ges>16) |
+  <ges bes>8.( <f aes>16 <e g>8. <ees ges>16) |
 
   << { f4( g8. aes16 bes8. c16 des4 | ees8-.) r \voiceOne ees4 ~ ees8. des16( c8. bes16 |
        \voiceTwo des8-.) r des4 ~ des8. c16^( \voiceOne bes8. aes16)
@@ -283,7 +285,7 @@ rl = << \global \relative c' {
   r4 \acciaccatura <c ees>8 <bes des>-. r r4 <bes des ees>8-. r |
   r4 \acciaccatura { f'16 ees c } des8-. r \tuplet 3/2 { r8 <a' c>-. <bes des>-. } \acciaccatura f'8 <des g>8-. r |
   r4 \acciaccatura <c, ees>8 aes-. r \acciaccatura { bes16 aes g } f8-. r \acciaccatura f aes-. r |
-  r4 \acciaccatura { g16 aes bes } aes8-. <aes c>-. <c' f>16-. <bes ees>-. <aes c>8 << { <ees bes'>16-.[ aes-.] } \\ { aes,16-.[ b-.] } >> r8 |
+  r4 \acciaccatura { g16 aes bes } aes8-. <aes c>-. <c' f>16-. <bes ees>-. <aes c>8 <ees bes'>16-.[ <b aes'>-.] r8 |
 
   r4 <bes des>8-. r r4 <bes des>8-. r |
   r4 << { \acciaccatura { a16 bes c } des8-. } \\ { \acciaccatura { e,16 f g } aes8-. } >> r r4 \clr \acciaccatura { \shape #'((0 . -6) (0 . -5) (1.7 . -6.6) (-0.2 . -4.2)) Slur \slurUp d,,16 ees c' } \crl \slurNeutral <bes des ees>8-. r |
@@ -308,11 +310,11 @@ rl = << \global \relative c' {
   c4 bes8 aes g f-.) r g(
   aes2) <ges bes>8.( <f aes>16 <e g>8. <ees ges>16) |
 
-  << { \voiceOne f4( g8. aes16 bes8. c16 des4 | ees8-.) r ees4 ~ ees8. des16( c8. bes16 |
+  << { \oneVoice f4( g8. aes16 bes8. c16 des4 | ees8-.) r \voiceOne ees4 ~ ees8. des16( c8. bes16 |
        \voiceTwo des8-.) r des4 ~ des8. c16^( \voiceOne bes8. aes16)
        \oneVoice \ottava 1 \tuplet 3/2 { r4 e''8-. } \tuplet 3/2 { f8-.g-. f-. } \tuplet 3/2 { g-. f-. g-. } \oneVoice aes8-. \ottava 0 r8 |
      } \new Voice {
-       \voiceTwo r4 \tuplet 3/2 { des,,,8-. <des f>-. r } r4 \tuplet 3/2 { r8 g-. <f g bes>-. } | r4 \voiceTwo <aes c>8-. r r4 aes8-. r | \voiceOne r4 fes'( ees) \voiceTwo aes,8-. r |
+       s1 | s4 \voiceTwo <aes,, c>8-. r r4 aes8-. r | \voiceOne r4 fes'( ees) \voiceTwo aes,8-. r |
   } >>
 
   ees16( f ees f ees f ees g f g f g f g f b,) |
@@ -357,9 +359,9 @@ rl = << \global \relative c' {
   r4 \acciaccatura { f,16 ees c } des8-. r \tuplet 3/2 { r8 <a' c>-. <bes des>-. } <des f g>8-. r |
   r4 \acciaccatura <c, ees>8 aes-. r \acciaccatura { bes16 aes g } f8-. r \acciaccatura f aes-. r |
   r4 \acciaccatura { g16 aes bes } aes8-. <aes c>-.
-  \ottava 1 << { <c'' f>16-. <bes ees>-. <aes c>8-. <ees bes'>16-. <b aes'>-. ees8-. } \\ { <c f>16-. <bes ees>-. <aes c>8-. aes,8-. r } >> \ottava 0 |
+  \ottava 1 << { <c'' f>16-. <bes ees>-. <aes c>8-. } \\ { <c, f>16-. <bes ees>-. <aes c>8-. } >> <ees' bes'>16-. <b aes'>-. ees8-. \ottava 0 |
 
-  r4 <bes des>8-. r r4 <bes des>8-. r |
+  r4 <bes, des>8-. r r4 <bes des>8-. r |
   r4 << { \acciaccatura { a16 bes c } des8-. } \\ { \acciaccatura { e,16 f g } aes8-. } >> r r4 \clr \acciaccatura { \shape #'((0 . -6) (0 . -5) (1.7 . -6.0) (-0.2 . -4.2)) Slur \slurUp d,,16 ees c' } \slurNeutral \crl <bes des ees>8-. r |
   r4 <ges' bes>8-. r r4 q8-. r | c8-. r \acciaccatura ees <a, a'>-. r r4 <a, c f>8-. r |
 
@@ -425,7 +427,7 @@ lr = << \global \relative c' {
   } >> \oneVoice e4_( f8. g16 |
 
   << { \voiceTwo aes4 g8 f d2 | des c) } \new Voice { \voiceOne r4 <c' f>8-. r r4 \acciaccatura <fis, ais>8 <g b>-. r | r4 \acciaccatura a8 <bes des>-. r r4 <g bes c>8-. r } >> |
-  << { \voiceOne r4 <c f>8-. r r4 f,8-. r | r8. f16( aes8. c16 bes8. aes16 g8. ges16) } \new Voice { \oneVoice \albs -1 0 aes4_( g8 f d4 \voiceTwo des | c2) <ees c'> } >>|
+  << { \voiceOne r4 <c f>8-. r r4 <f, bes des>8-. r | r8. f16( aes8. c16 bes8. aes16 g8. ges16) } \new Voice { \oneVoice \albs -1 0 aes4_( g8 f d4 \voiceTwo des | c2) <ees c'> } >>|
 
   << {  \voiceTwo \shape #'(((0 . 0) (0 . 0) (0 . 1) (0 . -3)) ((0 . 6) (0 . 6) (0 . 7.5) (0 . 4))) Slur f2( g2 | ees aes \cll \voiceOne fes ees) } \new Voice {
     \voiceOne r4 <aes des>8-. r r4 <bes des ees>8-. r |
@@ -488,7 +490,7 @@ lr = << \global \relative c' {
      } \new Voice {
     \voiceOne
     r4 <bes' des f>8-. r r4 <bes des ees>8-. r | r4 \acciaccatura { aes'16 g e } <bes des f>8-. r r4 <bes des ees>8-. r |
-    r4 \acciaccatura g'8 <c, ees>8-. r r4 \acciaccatura d8 <c ees>8-. r | r4 <c ees>8-. r r4 <c ees>8-. r |
+    r4 \acciaccatura g'8 <c, ees>8-. r r4 \acciaccatura d8 <c ees>8-. r | r4 <c ees>8-. r r4 <c ees aes>8-. r |
   } >>
 
   << {
@@ -533,7 +535,7 @@ lr = << \global \relative c' {
   << { \shape #'((0 . -1) (0 . 0) (0 . 0) (0 . -1)) Slur \voiceTwo aes4_( g8 f d4 des | c2) <ees c'> } \new Voice { \voiceOne r4 <c' f>8-. r r4 <f, bes des>8-. r | r8. f16( aes8. c16 bes8. aes16 g8. ges16) } >> \oneVoice |
 
   << { \voiceTwo \shape #'(((0 . 1) (0 . 1) (0 . 8) (0 . 4.5))) Slur f2( g2 | ees aes \cll \voiceOne fes ees) } \new Voice {
-    \voiceOne r4 \tuplet 3/2 { aes8-. aes r } r4 \tuplet 3/2 { <bes des ees>8-. <des ees>-. r } |
+    \voiceOne r4 \tuplet 3/2 { <aes des>8-. <aes des f> r } r4 \tuplet 3/2 { <bes des ees>8-. <des ees g>-. <f g bes>-. } |
     ees8-. r \acciaccatura { c16 des d } ees4-> ~ ees8. des16( c8. bes16) |
     \oneVoice r4 \voiceOne des4 ~ des8. c16( bes8. aes16 |
     <d, c'>2.) ~ \once \override TieColumn.tie-configuration = #'((7 . 1) (0 . -1)) q8 s |
@@ -593,7 +595,7 @@ lr = << \global \relative c' {
      } \new Voice {
     \voiceOne
     r4 <bes' des f>8-. r r4 <bes des ees>8-. r | r4 \acciaccatura { aes'16 g e } <bes des f>8-. r r4 <bes des ees>8-. r |
-    r4 \acciaccatura g'8 <c, ees>8-. r r4 \acciaccatura d8 <c ees>8-. r | r4 <c ees>8-. r r4 <c ees >8-. r |
+    r4 \acciaccatura g'8 <c, ees>8-. r r4 \acciaccatura d8 <c ees>8-. r | r4 <c ees>8-. r r4 <c ees aes>8-. r |
   } >>
 
   << {
@@ -742,9 +744,6 @@ pl = { s4.\sustainOn s8\sustainOff s2 }
 ps = { s8\sustainOn s\sustainOff s2. }
 
 pedal = {
-  \override SustainPedal.extra-offset = #'(0.5 . 0)
-  \override VerticalAxisGroup.staff-affinity = #UP
-  \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1
   \pn \pn
   \pn s1*3
   s1 \pn s1 \pn
@@ -785,10 +784,6 @@ pedal = {
 }
 
 pedaluc = {
-  \override UnaCordaPedal.self-alignment-X = -1
-  \override VerticalAxisGroup.staff-affinity = #UP
-  \override VerticalAxisGroup.nonstaff-nonstaff-spacing.padding = 1
-  \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1
   s1\unaCorda s4 s\treCorde s2
   s1^"use arpeggios freely" s1*7
   s1*7 s2. s4\unaCorda
@@ -815,26 +810,18 @@ pedaluc = {
     \new PianoStaff \with {
       connectArpeggios = ##t
     } <<
-      \new Staff = "rr" \with {
-        midiInstrument = "acoustic grand"
-      } \rr
-      \new Dynamics = "dynamics" \rd
-      \new Staff = "rl" \with {
-        midiInstrument = "acoustic grand"
-      } \rl
+      \new Staff = "rr" \rr
+      \new PianoDynamics = "rd" \rd
+      \new Staff = "rl" \rl
     >>
     \new PianoStaff \with {
       connectArpeggios = ##t
     } <<
-      \new Staff = "lr" \with {
-        midiInstrument = "acoustic grand"
-      } \lr
-      \new Dynamics = "dynamics" \ld
-      \new Staff = "ll" \with {
-        midiInstrument = "acoustic grand"
-      } \ll
-      \new Dynamics = "pedaluc" \pedaluc
-      \new Dynamics = "pedal" \pedal
+      \new Staff = "lr" \lr
+      \new PianoDynamics = "ld" \ld
+      \new Staff = "ll" \ll
+      \new PianoPedal = "pedaluc" \pedaluc
+      \new PianoPedal = "pedal" \pedal
     >>
   >>
   \layout {}

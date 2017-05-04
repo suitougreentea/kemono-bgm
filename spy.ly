@@ -33,6 +33,7 @@ right_a = << \global_a \relative c {
 } >>
 
 left_a = << \global_a \relative c, {
+  \clef bass
   r16 a bes b |
   c8-. r c16[ ees r f] r g r8 r4 |
   c,8-_ r r c16 ees r c r8 r4 |
@@ -74,6 +75,7 @@ global_b = {
 }
 
 right_b = << \global_b \relative c'' {
+  \clef treble
   << { fis8( g-.) dis( e-.) b( c-.) g( aes-.) } \\ { c4 g ees c } >>
   << { e'8( f-.) cis( d-.) a( bes-.) e,( f-.) } \\ { bes4 f des aes } >>
   << { fis''8 g dis e b c g aes } \\ { c4 g ees c } >>
@@ -85,6 +87,7 @@ right_b = << \global_b \relative c'' {
 } >>
 
 left_b = << \global_b \relative c {
+  \clef bass
   c8( <g' bes>-.) g,( <e' g>-.) aes,( <ees' ges>-.) ees,( <c' ees>-.) |
   bes8( <f' aes>-.) f,( <d' f>-.) des( <aes' ces>-.) aes,( <f' aes>-.) |
   c8 <g' bes> g, <e' g> aes, <ees' ges> ees, <c' ees> |
@@ -104,20 +107,16 @@ pedal_b = {}
 \score {
   <<
     \new PianoStaff <<
-      \new Staff = "right" \with {
-        midiInstrument = "acoustic grand"
-      } \right_a
-      \new Dynamics = "dynamics" \dynamics_a
-      \new Staff = "left" \with {
-        midiInstrument = "acoustic grand"
-      } { \clef bass \left_a }
-      \new Dynamics = "pedal" \pedal_a
+      \new Staff = "right" \right_a
+      \new PianoDynamics = "dynamics" \dynamics_a
+      \new Staff = "left" \left_a
+      \new PianoPedal = "pedal" \pedal_a
     >>
   >>
   \header {
     title = "偵察するやつ"
     revision = "Revision 1"
-    date = "2017/4/14"
+    date = "2017/5/4"
   }
   \layout {}
   \midi {}
@@ -126,20 +125,16 @@ pedal_b = {}
 \score {
   <<
     \new PianoStaff <<
-      \new Staff = "right" \with {
-        midiInstrument = "acoustic grand"
-      } \right_b
-      \new Dynamics = "dynamics" \dynamics_b
-      \new Staff = "left" \with {
-        midiInstrument = "acoustic grand"
-      } { \clef bass \left_b }
-      \new Dynamics = "pedal" \pedal_b
+      \new Staff = "right" \right_b
+      \new PianoDynamics = "dynamics" \dynamics_b
+      \new Staff = "left" \left_b
+      \new PianoPedal = "pedal" \pedal_b
     >>
   >>
   \header {
     title = "早とちるやつ"
     revision = "Revision 1"
-    date = "2017/4/14"
+    date = "2017/5/4"
   }
   \layout {}
   \midi {}

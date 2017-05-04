@@ -8,7 +8,7 @@ cright = \change Staff = "right"
 \header {
   title = "合わせる顔が無いやつ"
   revision = "Revision 1"
-  date = "2017/4/14"
+  date = "2017/5/4"
 }
 
 \paper {
@@ -25,6 +25,7 @@ global = {
 }
 
 right = << \global \relative c'' {
+  \clef treble
   << \relative {
     \voiceOne
     <d'' fis a cis>2.\arpeggio a'4 |
@@ -73,7 +74,6 @@ right = << \global \relative c'' {
     r8 c f bes <f, c' a'>2\arpeggio ~ |
 
     q1\laissezVibrer
-
   } \new Voice {
     \voiceThree
     s1*8
@@ -85,6 +85,7 @@ right = << \global \relative c'' {
 } >>
 
 left = << \global \relative c {
+  \clef bass
   <d d'>1 ~ | q | <gis, gis'>1 | <a a'>2 <d a' c> |
   << { c'2 c8 c c c | c1 } \\ { c,1 ~ | c } >>
   <b b'>2 <e e'> | <aes, aes'> des |
@@ -112,14 +113,10 @@ pedal = {
     \new PianoStaff \with {
       connectArpeggios = ##t
     } <<
-      \new Staff = "right" \with {
-        midiInstrument = "acoustic grand"
-      } \right
-      \new Dynamics = "dynamics" \dynamics
-      \new Staff = "left" \with {
-        midiInstrument = "acoustic grand"
-      } { \clef bass \left }
-      \new Dynamics = "pedal" \pedal
+      \new Staff = "right" \right
+      \new PianoDynamics = "dynamics" \dynamics
+      \new Staff = "left" \left
+      \new PianoPedal = "pedal" \pedal
     >>
   >>
   \layout {}

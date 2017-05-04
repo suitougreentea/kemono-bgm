@@ -8,7 +8,7 @@ cright = \change Staff = "right"
 \header {
   title = "しゃべったー！のやつ"
   revision = "Revision 2"
-  date = "2017/4/14"
+  date = "2017/5/4"
 }
 
 \paper {
@@ -47,6 +47,7 @@ global = {
 }
 
 right = << \global \relative c' {
+  \clef treble
   \partial 2 { <d a'>8-. <d d'>16 q <g b>4-. } |
   r4 ais8( b-.--) c( cis-.--) d4-.-- | r4 ais8( b-.--) g4-.-- r |
   R1*2 |
@@ -87,6 +88,7 @@ right = << \global \relative c' {
 >>
 
 left = << \global \relative c {
+  \clef bass
   \partial 2 { r2 }
   << <d g b>4-.-- \\ g,4-.-- >> r d-.-- <d' g b>-.-- |
   << <d g b>4-.-- \\ g,4-.-- >> r d-.-- <d' fis a d>( |
@@ -194,14 +196,10 @@ pedal = {
 \score {
   <<
     \new PianoStaff <<
-      \new Staff = "right" \with {
-        midiInstrument = "acoustic grand"
-      } \right
-      \new Dynamics = "dynamics" \dynamics
-      \new Staff = "left" \with {
-        midiInstrument = "acoustic grand"
-      } { \clef bass \left }
-      \new Dynamics = "pedal" \pedal
+      \new Staff = "right" \right
+      \new PianoDynamics = "dynamics" \dynamics
+      \new Staff = "left" \left
+      \new PianoPedal = "pedal" \pedal
     >>
   >>
   \layout {}

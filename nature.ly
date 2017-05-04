@@ -8,7 +8,7 @@ cright = \change Staff = "right"
 \header {
   title = "最初のやつ"
   revision = "Revision 2"
-  date = "2017/4/14"
+  date = "2017/5/4"
 }
 
 global = {
@@ -31,6 +31,7 @@ global = {
 }
 
 right = << \global \relative c {
+  \clef treble
   \oneVoice <fis a d e>8.\arpeggio q q8 q | q8. q q8 q16 q |
   <g b d e>8.\arpeggio q q8 q | \voiceTwo q8. q q8 q16 q |
   \oneVoice <a cis e>8.\arpeggio q q8 q | q8. q q8 q16 q |
@@ -84,6 +85,7 @@ right = << \global \relative c {
 >>
 
 left = << \global \relative c {
+  \clef bass
   << {
     \voiceOne d8 d16 d8 d16 d8 d | d8 d16 d8 d16 d8 d16 d |
     \cleft d8 d16 d8 d16 d8 d | \cright d''8^\markup \italic "m.g." a16 fis8 a16 d8 a |
@@ -186,17 +188,11 @@ pedal = {
 
 \score {
   <<
-    \new PianoStaff \with {
-      connectArpeggios = ##t
-    } <<
-      \new Staff = "right" \with {
-        midiInstrument = "acoustic grand"
-      } \right
-      \new Dynamics = "dynamics" \dynamics
-      \new Staff = "left" \with {
-        midiInstrument = "acoustic grand"
-      } { \clef bass \left }
-      \new Dynamics = "pedal" \pedal
+    \new PianoStaff <<
+      \new Staff = "right" \right
+      \new PianoDynamics = "dynamics" \dynamics
+      \new Staff = "left" \left
+      \new PianoPedal = "pedal" \pedal
     >>
   >>
   \layout {}

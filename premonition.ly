@@ -55,9 +55,7 @@ pedal = {
 
 \score {
   <<
-    \new PianoStaff \with {
-      connectArpeggios = ##t
-    } <<
+    \new PianoStaff <<
       \new Staff = "right" \right
       \new PianoDynamics = "dynamics" \dynamics
       \new Staff = "left" \left
