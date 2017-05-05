@@ -65,6 +65,10 @@
           \fromproperty #'header:subsubtitle
         }
         \fill-line {
+          \large \jp-sans-semibold
+          \fromproperty #'header:nickname
+        }
+        \fill-line {
           \fromproperty #'header:poet
           { \large \bold \fromproperty #'header:instrument }
           \fromproperty #'header:composer

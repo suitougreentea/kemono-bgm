@@ -54,12 +54,12 @@ right = << \global \relative c''' {
   r8 a16 a bes bes g8 fis16 fis a a g8 r |
   r8 e16 e f f d8 bes d g r |
   r8 a16 a bes bes g8 fis16 fis a a g8 r |
-  r8 e16 e f f d8 bes( d-.--) c r |
+  r8 e16 e f f d8 bes( d-_) c r |
 
   r8 g'4 bes8 c-. r \acciaccatura dis16 e8. d16 | r c bes8-. r4 r2 |
   r8 g4 bes8 c-. r \acciaccatura dis16 e8. d16 | r e d8-. r4 r2 |
-  r8 g,4 bes8 c-. r \acciaccatura dis16 e8. d16 | r c bes8-. r4 r << { c16 r d c } \\ { g8-.-- g-.-- } >> |
-  << { r4 c16 r d c r4 c8 d } \\ { f,4-.-- f-.-- f-.-- f-.-- } >> | << { ees'2 e8 } \\ { <fis, a>8 q q q <f b> } >> r <g' g'>4-> |
+  r8 g,4 bes8 c-. r \acciaccatura dis16 e8. d16 | r c bes8-. r4 r << { c16 r d c } \\ { g8-_ g-_ } >> |
+  << { r4 c16 r d c r4 c8 d } \\ { f,4-_ f-_ f-_ f-_ } >> | << { ees'2 e8 } \\ { <fis, a>8 q q q <f b> } >> r <g' g'>4-> |
 
   R1*4
 
@@ -77,15 +77,15 @@ left = << \global \relative c {
   << <g'' c>8-> \\ <c,, c'>8-> >> r r4 r4 r8 << <g'' c>8-> \\ <c,, c'>8-> >> |
   << <g'' c>8-> \\ <c,, c'>8-> >> r r4 r4 <bes' f' aes>4  ~ | q2 |
 
-  c8( <g' c>-.--) g,-.-- <g' c>-.-- c,8( <g' c>16) c, g8( <bes f' g>) |
-  c8( <g' c>-.--) g,-.-- <g' c>-.-- c,8( <g' c>) <bes, f'>16( g' <d bes'>8) |
+  c8( <g' c>-_) g,-_ <g' c>-_ c,8( <g' c>16) c, g8( <bes f' g>) |
+  c8( <g' c>-_) g,-_ <g' c>-_ c,8( <g' c>) <bes, f'>16( g' <d bes'>8) |
   c8_\markup \italic "simile" <g' c> g, <g' c> c, <g' c>16 c, g8 <bes f' g> |
-  c8 <g' c> g, <g' c> << { r <g c>-.-- f16( g bes8) } \\ { c,8( d dis e) } >> |
+  c8 <g' c> g, <g' c> << { r <g c>-_ f16( g bes8) } \\ { c,8( d dis e) } >> |
 
-  << { r8 c'-.-- r c-.-- r c-.-- r c } \\ { c,8( g'-.--) g,8( g'-.--) c,8( g'16) c, g8( <bes f' g>) } >>
-  << { r8 c'-.-- r c-.-- r c-.-- <bes ees>4-- } \\ { c,8( g'-.--) g,8( g'-.--) c,8( g'16) c, <bes f'>16( g' <d bes'>8) } >>
+  << { r8 c'-_ r c-_ r c-_ r c } \\ { c,8( g'-_) g,8( g'-_) c,8( g'16) c, g8( <bes f' g>) } >>
+  << { r8 c'-_ r c-_ r c-_ <bes ees>4-- } \\ { c,8( g'-_) g,8( g'-_) c,8( g'16) c, <bes f'>16( g' <d bes'>8) } >>
   << { r8 c' r c r c r c } \\ { c,8 g' g,8 g' c,8 g'16 c, g8 <bes f' g> } >>
-  << { r8 c' r c f,16( g bes8-.--) } \\ { c,8 g' f, f' g,([ <bes f'>-.--)] } >> <c g'>8 r
+  << { r8 c' r c f,16( g bes8-_) } \\ { c,8 g' f, f' g,([ <bes f'>-_)] } >> <c g'>8 r
 
   << {
    <e g c>8-. q-. q8. <d f bes>16-. r q-. r q-. q8-. q |
@@ -97,17 +97,17 @@ left = << \global \relative c {
    c2 bes | a bes |
   } >>
   <c e g c>8 q q8. <d f bes>16 r q r q q8 q |
-  <ees fis a c>8 q q8. <e g c>16 r q r q q8-.-- q-.-- |
-  <f c' ees>4-.-- r8 c << <c' ees>4-.-- \\ <f,, f'>-.-- >> r8 c' |
+  <ees fis a c>8 q q8. <e g c>16 r q r q q8-_ q-_ |
+  <f c' ees>4-_ r8 c << <c' ees>4-_ \\ <f,, f'>-_ >> r8 c' |
   << { r8 <fis a c> q q } \\ { <fis, fis'>2 } >> <g g'>8 r r4 |
 
-  << { r8 <g' c>-.-- r q-.-- r q-.-- r q-.-- } \\ { c,8 r g r c[ r16 c] g8( <bes f'>) } >> |
+  << { r8 <g' c>-_ r q-_ r q-_ r q-_ } \\ { c,8 r g r c[ r16 c] g8( <bes f'>) } >> |
   << { r8 <g' c> r q r q <bes ees>4-- } \\ { c,8 r g r c[ r16 c] <bes f'>16( g' <d bes'>8) } >>
   << { r8 <g c> r q r q r q } \\ { c,8 r g r c[ r16 c] g8( <bes f'>) } >> |
-  << { r8 <g' c> r <f c'> f16( g bes8-.--) } \\ { c,8 r f, r <g d'>([ <bes f'>-.--)] } >> <c g' c>8 r |
+  << { r8 <g' c> r <f c'> f16( g bes8-_) } \\ { c,8 r f, r <g d'>([ <bes f'>-_)] } >> <c g' c>8 r |
 
   <c g'>2.-> ~ q8 c16 g | c,2.-> ~ c8 g'16 c | g'2.-> <ges, ges'>16-> <f f'>-> <ees ees'>8-> |
-  <c c'>->( <g'' c>-.--) g,-.-- <g' c>-.-- c,( <g' c>-.--) <bes, f'>16( g' <d bes'>8) |
+  <c c'>->( <g'' c>-_) g,-_ <g' c>-_ c,( <g' c>-_) <bes, f'>16( g' <d bes'>8) |
   <c g' c>8-> r r4 <g d' g>8->( <bes f' bes>->-.) <c g'>-> r |
 
 } >>

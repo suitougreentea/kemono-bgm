@@ -57,6 +57,21 @@ right = << \global \relative c {
   r2 <g d' g>8 q <f c' f> <g d' g> |
   r2 <g d' g>8 q <bes f' bes> <g d' g> |
   r2 gis'16 fis e d c-. bes-. aes-. f-. |
+
+  <g d' g>8. q16 r8 <f c' f> <g d' g> q <bes f' bes> <g d' g> |
+  r2 <g d' g>8 q <f c' f> <g d' g> |
+  r2 <g d' g>8 q <bes f' bes> <g d' g> |
+  g'16 g g g g a bes bes <d, g d'>8 <f bes f'>16 d' <c, f c'>8 <a a'> |
+
+  <g d' g>8. q16 r8 <f c' f> <g d' g> q <bes f' bes> <g d' g> |
+  R1 |
+  <g d' g>8. q16 r8 <f c' f> <g d' g>8 q <bes f' bes> <g d' g> |
+  r2 gis'16 fis e d c bes aes f |
+
+  r8. <d g d'>16 ~ q q q q r2 |
+  r4 <bes' f' bes>8 q q q r4 |
+  r8. <d, g d'>16 ~ q q q q r2 |
+  r4 <d' g d'>8 q q q r4 |
 } >>
 
 left = << \global \relative c, {
@@ -85,14 +100,27 @@ left = << \global \relative c, {
   <g d' g>8. q16 r d'-. <f, f'>8 <g d' g>-_ q-_ <bes f' bes>16-.[ c r g] |
   <g d' g>8. q16 r16 g-. f' g g,8-_ g'-_ f16 d bes-. f-. |
   <g d' g>8. q16 r d'-. <f, f'>8 <g d' g>-_ q-_ <bes f' bes>16-.[ c r g] |
-  <g d'>16[ g' r <d aes'>] aes8-. f ees( ees'-_) f,( f'-_) |
+  <g d'>16[ g' r aes] f,8-. f' ees,( ees'-_) f,( f'-_) |
 
   <g, d' g>8. q16 r d' <f, f'>8 <g d' g> q <bes f' bes>16[ c r g] |
   <g d' g>8. q16 r16 g f' g g,8 g' \tuplet 3/2 { d16 f d } bes f |
   <g d' g>8. q16 r d' <f, f'>8 <g d' g> q <bes f' bes>16[ c r g] |
-  c16[ d r g,] d'[ f r g,] gis' fis e d c-. bes-. aes-. f-. |
+  c16--[ d r g,] d'--[ f r g,] gis' fis e d c-. bes-. aes-. f-. |
 
+  <g d' g>8. q16 r d' <f, f'>8 <g d' g> q <bes f' bes>16[ c r g] |
+  <g d' g>8. q16 r16 g f' g g,8 g' f16 d bes f |
+  <g d' g>8. q16 r d' <f, f'>8 <g d' g> q <bes f' bes>16[ c r g] |
+  <g d'>16[ g' r <d aes'>] aes8 f ees ees' f, f' |
 
+  <g, d' g>8. q16 r d' <f, f'>8 <g d' g> q <bes f' bes>16[ c r g] |
+  <g d' g>8. q16 r16 g f' g <bes,, bes'>8-_ c'16 bes <g, g'>8-_ c'16 bes |
+  <g d' g>8. q16 r d' <f, f'>8 <g d' g> q <bes f' bes>16[ c r g] |
+  c16[ d r g,] d'[ f r g,] gis' fis e d c bes aes f |
+
+  <g d' g>8 q8-. r4 q8-. q-. <aes d aes'>4
+  <g d' g>4 r r <aes d aes'>
+  <g d' g>8 q8-. r4 q8-. q-. <aes d aes'>4
+  <g d' g>4 r8 g16 g g g g g <aes d aes'>
 } >>
 
 dynamics = {
