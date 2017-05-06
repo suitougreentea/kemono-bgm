@@ -39,7 +39,7 @@ left = << \global \relative {
   \clef bass
   c2. ~ c8 g | c1 | c2. ~ c8 g | c1 |
   c2. ~ c8 g | c1 | bes2 f4 fis | g2. d'4 |
-  << { \voiceOne g1 ~ | g2. r4 | r b2 g4 | a f2 d8 \tuplet 3/2 { e16 d e ~ } } \new Voice { \voiceTwo c2. ~ c8 g | c1 | c2. ~ c8 g | c1 | } >>
+  << { \voiceOne g1 ~ | g | r4 b2 g4 | a f2 d8 \tuplet 3/2 { e16 d e ~ } } \new Voice { \voiceTwo c2. ~ c8 g | c1 | c2. ~ c8 g | c1 | } >>
   << { \voiceOne e2 r2 } \new Voice { \voiceTwo c4. g8 b2 | \oneVoice bes4. f8 a2 | d,2 e4 f | g2. d4 } >>
 
   <c' f a>8 <f, f'> q r <e e'> q r q | <d d'>4 <g g'> <c, c'>4 <e e'> |

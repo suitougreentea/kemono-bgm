@@ -25,7 +25,7 @@ compoundTime = {
 \header {
   title = "食べないやつ"
   revision = "Revision 2"
-  date = "2017/5/4"
+  date = "2017/5/6"
 }
 
 \paper {
@@ -148,6 +148,7 @@ globala = {
 }
 
 righta = << \globala \relative c' {
+  \clef treble
  b'8 g16 a b8 cis d e fis d <g, cis e>-. <g cis>-. r4 |
  b8 g16 a b8 cis d e fis d <cis e g>-. q-. q-. r |
  << { \oneVoice b8 g16 a b8 cis \voiceOne d e fis d | e cis r cis d b r b } \\ { s2 fis( | e d) } >> |
@@ -156,6 +157,7 @@ righta = << \globala \relative c' {
 } >>
 
 lefta = << \globala \relative c {
+  \clef bass
   g8 r a r b r d r <a e'>-. q-. r4 |
   g8 r a r b r d r <a g'>-. q-. q-. r |
   << { g'2( fis e d) } \\ { r4 g,8 r r4 fis8 r | r4 e8 r r4 d8 r } >>
