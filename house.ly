@@ -79,7 +79,7 @@ left = << \global \relative {
 
   << { <e' a d>4 } \\ { <c, c'>} >> c'8-. c,-. c4 g'8 <c, c'>-. | r q-. r q-. q4 g'8( a) |
   << { <e' a d>4 } \\ { <c, c'>} >> c'8-. c,-. c4 g'8 <c, c'>-. | r q-. r q-. q4 g'8( a) |
-  <c, c'>4 r c'8-. fis-. g-. c-. | R1 |
+  <c, c'>8 r r4 c'8-. fis-. g-. c-. | R1 |
 } >>
 
 dynamics = {
