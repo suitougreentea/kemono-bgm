@@ -7,8 +7,8 @@ cright = \change Staff = "right"
 
 \header {
   title = "しゃべったー！のやつ"
-  revision = "Revision 2"
-  date = "2017/5/4"
+  revision = "Revision 2 (Unfinished)"
+  date = "2017/5/13"
 }
 
 \paper {
@@ -152,15 +152,15 @@ left = << \global \relative c {
 dynamics = {
   \partial 2 s2\mf
   s1*4
-  s1-\markup \italic "simile" s1*7
+  s1^\markup \italic "simile" s1*7
   s1*4
   s1*8
 
-  s4*7\mf s4*7*2
+  s4*7-\offset X-offset -3 \mf s4*7*2
   s1 s1\<
   s4*7\mf s4*7
-  s1 s s\< s8\f s\mp\< s2. s2 s2\!
-  s1\mf s1*6 s2
+  s1 s s-\offset Y-offset -2 \< s8\f s\mp-\offset Y-offset -3 \< s2. s2 s2\!
+  s1-\offset Y-offset -2 \mf s1*6 s2
   s1\mf s1*6 s2 s2\< s2\!
 }
 

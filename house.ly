@@ -8,8 +8,8 @@ cright = \change Staff = "right"
 \header {
   title = "お家ができた！"
   nickname = "（もけ！のやつ）"
-  revision = "Revision 1"
-  date = "2017/5/12"
+  revision = "Revision 2"
+  date = "2017/5/13"
 }
 
 \paper {
@@ -42,8 +42,8 @@ right = << \global \relative {
   r2 <a c a'>4 <f' a f'> | <e g c e>4. <c c'>8 <g' c g'>8. <f f'>16 ~ q8 <e e'> | <e f bes e>4. <d d'>8 ~ q2 | <c d g c>4 <b b'> <a a'> <b b'> |
 
   \cleft e,8( \cright g c d e2) | \cleft d,8( \cright g a b d2) |
-  \cleft d,8( \cright f bes c ~ c bes4.) | g4 g8( a b2) |
-  r4 <e, a d>8-. r <f a c>4. <e a d>8-. | r q-. r q-. <f a c>-. r q4 |
+  \cleft d,8( \cright f bes c ~ c bes4.) | << { \cleft b,8( \cright d g a b2) } \new Voice { \stemDown \once \override Stem.cross-staff = ##t \once \override Stem.length = #15 g2.\arpeggio } >> |
+  r4 <e a d>8-. r <f a c>4. <e a d>8-. | r q-. r q-. <f a c>-. r q4 |
   r4 <e a d>8-. r <f a c>4. <e a d>8-. | r q-. r q-. <f a c>-. r q4 |
   <e g c>8 r r4 c8-. fis-. g-. c-. | R1 |
 } >>
@@ -124,6 +124,11 @@ pedal = {
       \new PianoPedal = "pedal" \pedal
     >>
   >>
-  \layout {}
+  \layout {
+    \context {
+      \Voice
+      \override Slur.details.free-head-distance = 1
+    }
+  }
   \midi {}
 }

@@ -8,8 +8,8 @@ cright = \change Staff = "right"
 \header {
   title = "セルリアン"
   nickname = "（へしが無いやつ）"
-  revision = "Revision 1"
-  date = "2017/5/6"
+  revision = "Revision 2 (Unfinished)"
+  date = "2017/5/14"
 }
 
 \paper {
@@ -87,13 +87,12 @@ right = << \global \relative c {
   r8. <d, g d'>16 ~ q q q q r2 |
   \clef bass <d,, g>8-> q q-> q q-> q <d aes'>4->
 
-  r2 \clef treble \tuplet 3/2 { g''16( aes g } f ees d c bes aes) |
+  r2 \clef treble \tuplet 3/2 { g''16( aes \set stemRightBeamCount = 1 g } \set stemLeftBeamCount = 1 f ees d c bes aes) |
   aes8-^[ r16 aes-^] r8 aes-^ r2 |
 } >>
 
 left = << \global \relative c, {
   \clef bass
-  %\set Score.skipTypesetting = ##t
   g16_\mf g' g, g' ~ g g, g'8 g,16 g' g, g' ~ g g, g'8 |
   g,16 g' g, g' ~ g g, g'8 g,16 g' g, bes' ~ bes g, bes'8 |
   g,16 g' g, g' ~ g g, g'8 g,16 g' g, g' ~ g g, g'8 |
@@ -113,19 +112,18 @@ left = << \global \relative c, {
   g,16-> g' g,-> g' g,-> g' g,-> g' g,16-> g' g,-> <aes aes'>-> ~ q aes-> aes'8->\laissezVibrer |
   R1
 
-  \set Score.skipTypesetting = ##f
   <g d' g>8[ r16 q] r d'-. <f, f'>8-_ <g d' g>-_ q-_ <bes f' bes>16-.[ c r g] |
   <g d' g>8[ r16 q] r16 g-. f' g g,8-_ g'-_ f16 d bes-. f-. |
   <g d' g>8[ r16 q] r d'-. <f, f'>8-_ <g d' g>-_ q-_ <bes f' bes>16-.[ c r g] |
   <g d'>16[ g' r aes] aes,8-. <f f'> ees( ees'-_) f,( f'-_) |
 
   <g, d' g>8[ r16 q] r d' <f, f'>8 <g d' g> q <bes f' bes>16[ c r g] |
-  <g d' g>8[ r16 q] r16 g f' g g,8 g' \tuplet 3/2 { d16 f d } bes f |
+  <g d' g>8[ r16 q] r16 g f' g g,8 g' \tuplet 3/2 { d16 f \set stemRightBeamCount = 1 d } \set stemLeftBeamCount = 1 bes f |
   <g d' g>8[ r16 q] r d' <f, f'>8 <g d' g> q <bes f' bes>16[ c r g] |
   c16-.->[ d-.-> r g,] d'-.->[ f-.-> r g,] gis'-> fis-> e-> d-> c-.-> bes-.-> aes-.-> f-.-> |
 
   <g d' g>8[ r16 q] r d' <f, f'>8 <g d' g> q <bes f' bes>16[ c r g] |
-  <g d' g>8[ r16 q] r16 g f' g g,8 g' \tuplet 3/2 { d16 f d } bes f |
+  <g d' g>8[ r16 q] r16 g f' g g,8 g' \tuplet 3/2 { d16 f \set stemRightBeamCount = 1 d } \set stemLeftBeamCount = 1 bes f |
   <g d' g>8[ r16 q] r d' <f, f'>8 <g d' g> q <bes f' bes>16[ c r g] |
   <g d'>16[ g' r aes] aes,8 <f f'> ees ees' f, f' |
 
@@ -144,7 +142,7 @@ left = << \global \relative c, {
   << { <g' d' g>8->[ q8] } \\ g,4-> >> <g' d'>8-> q <g  d' g>8-> q << <aes d aes'>4-> \\ aes,4-> >>
   g16-> g' g,-> g' g,16-> g' g,-> g' g,16-> g' g,-> g' <aes, aes'>4->
 
-  r2 \tuplet 3/2 { g''16( aes g } f ees d c bes aes) |
+  r2 \tuplet 3/2 { g''16( aes \set stemRightBeamCount = 1 g } \set stemLeftBeamCount = 1 f ees d c bes aes) |
   <aes ees' aes>8-^[ r16 q-^] r8 q8-^ r2 |
 } >>
 
