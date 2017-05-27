@@ -21,7 +21,7 @@ albs = #(define-music-function
   title = "二人でお茶を"
   subtitle = \markup { \center-column { \normal-text \italic "Completed version" \bold \italic "Faithful copy for 4 hands" } }
   composer = \markup \override #'(baseline-skip . 2.5) \right-column { "Original song by Vincent Youmans" "Performed by Edward Johnson" }
-  revision = "Revision 2"
+  revision = "Revision 2 (Unfinished)"
   date = "2017/5/4"
 }
 

@@ -5,6 +5,12 @@
 cleft = \change Staff = "left"
 cright = \change Staff = "right"
 
+\header {
+  title = "さわがしい2匹"
+  revision = "Revision 1"
+  date = "2017/5/4"
+}
+
 \paper {
   print-all-headers = ##t
   page-count = 1
@@ -114,9 +120,7 @@ pedal_b = {}
     >>
   >>
   \header {
-    title = "偵察するやつ"
-    revision = "Revision 1"
-    date = "2017/5/4"
+    piece = "（偵察するやつ）"
   }
   \layout {}
   \midi {}
@@ -132,9 +136,7 @@ pedal_b = {}
     >>
   >>
   \header {
-    title = "早とちるやつ"
-    revision = "Revision 1"
-    date = "2017/5/4"
+    piece = "（早とちるやつ）"
   }
   \layout {}
   \midi {}

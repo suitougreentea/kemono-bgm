@@ -9,7 +9,7 @@ cright = \change Staff = "right"
 \header {
   title = "凪"
   nickname = "（言われるも！のやつ）"
-  revision = "Revision 1"
+  revision = "Revision 1 (Unfinished)"
   date = "2017/"
 }
 

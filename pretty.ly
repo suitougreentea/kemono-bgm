@@ -13,8 +13,9 @@ av = #(define-music-function
 )
 
 \header {
-  title = "ハァハァしないやつ"
-  revision = "Revision 2"
+  title = "かわいい2匹"
+  nickname = "（ハァハァしないやつ）"
+  revision = "Revision 2 (Unfinished)"
   date = "2017/5/4"
 }
 

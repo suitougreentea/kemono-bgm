@@ -8,7 +8,7 @@ cright = \change Staff = "right"
 \header {
   title = "お家ができた！"
   nickname = "（もけ！のやつ）"
-  revision = "Revision 2"
+  revision = "Revision 2 (Unfinished)"
   date = "2017/5/13"
 }
 

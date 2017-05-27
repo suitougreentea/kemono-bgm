@@ -8,7 +8,7 @@ cright = \change Staff = "right"
 \header {
   title = "バンバン"
   nickname = "（予算が高いやつ）"
-  revision = "Revision 0"
+  revision = "Revision 1 (Unfinished)"
   date = "2017/5/**"
 }
 

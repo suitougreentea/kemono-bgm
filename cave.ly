@@ -7,8 +7,9 @@ ccenter = \change Staff = "center"
 cright = \change Staff = "right"
 
 \header {
-  title = ""
-  revision = "Revision 1"
+  title = "洞窟の奥"
+  nickname = "（不穏なやつ）"
+  revision = "Revision 1 (Unfinished)"
   date = "2017/"
 }
 

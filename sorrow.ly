@@ -6,7 +6,8 @@ cleft = \change Staff = "left"
 cright = \change Staff = "right"
 
 \header {
-  title = "合わせる顔が無いやつ"
+  title = "けもの達の哀しみ"
+  nickname = "（合わせる顔が無いやつ）"
   revision = "Revision 1"
   date = "2017/5/4"
 }

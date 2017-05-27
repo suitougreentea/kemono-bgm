@@ -61,7 +61,7 @@ viiii = #(define-music-function
 \header {
   title = "I Want to be Happy"
   composer = \markup \override #'(baseline-skip . 2.5) \right-column { "Original song by Vincent Youmans" "Performed by Edward Johnson" }
-  revision = "Revision 0"
+  revision = "Revision 1 (Unfinished)"
   date = "2017/5/4"
 }
 

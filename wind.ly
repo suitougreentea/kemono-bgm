@@ -6,8 +6,9 @@ cleft = \change Staff = "left"
 cright = \change Staff = "right"
 
 \header {
-  title = "最初のやつ"
-  revision = "Revision 2"
+  title = "風を感じて"
+  nickname = "（最初のやつ）"
+  revision = "Revision 2 (Unfinished)"
   date = "2017/5/4"
 }
 

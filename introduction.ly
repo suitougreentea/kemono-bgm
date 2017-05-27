@@ -3,7 +3,8 @@
 \include "stylesheet.ily"
 
 \header {
-  title = "ジャンプ力のやつ"
+  title = "動物紹介"
+  nickname = "（ジャンプ力のやつ）"
   revision = "Revision 1"
   date = "2017/5/4"
 }

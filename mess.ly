@@ -23,8 +23,9 @@ compoundTime = {
 }
 
 \header {
-  title = "食べないやつ"
-  revision = "Revision 2"
+  title = "てんやわんや"
+  nickname = "（食べないやつ）"
+  revision = "Revision 2 (Unfinished)"
   date = "2017/5/6"
 }
 

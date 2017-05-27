@@ -77,18 +77,19 @@
           \fromproperty #'header:meter
           \fromproperty #'header:arranger
         }
+        \hspace #1
+        \fill-line { "" \fromproperty #'header:revision }
+        \fill-line { "" \fromproperty #'header:date }
       }
     }
   }
 
   scoreTitleMarkup = \markup { \column {
-    \on-the-fly \print-all-headers { \bookTitleMarkup \hspace #1 }
+    %\on-the-fly \print-all-headers { \bookTitleMarkup \hspace #1 }
     \fill-line {
-      \fromproperty #'header:piece
-      \fromproperty #'header:opus
+      \jp-sans-semibold \fromproperty #'header:piece
+      \jp-sans-semibold \fromproperty #'header:opus
     }
-    \fill-line { "" \fromproperty #'header:revision }
-    \fill-line { "" \fromproperty #'header:date }
   }}
 
   tagline = \markup \fill-line \italic {
