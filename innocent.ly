@@ -16,12 +16,12 @@ cright = \change Staff = "right"
 }
 
 global = {
-  \key c \major
+  \key c \mixolydian
   \time 4/4
   \tempo \markup {
     \concat {
       \smaller \general-align #Y #DOWN \note #"4" #1
-      \normal-text " = 86/94"
+      \normal-text " = 86/94 (C mixolydian)"
     }
   }
 
