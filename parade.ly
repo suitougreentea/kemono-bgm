@@ -167,7 +167,7 @@ right = << \global \relative {
     \voiceOne \cleft <fis,, gis b d>8 r \cright <b' d e> r \cleft <fis, gis b d>8 r \cright <b' d e> r |
     \cleft e,8 r <e, e'> r \t { <e b' e> \cright \oneVoice ees''( d des c b) }
     \cleft \voiceOne <fis, a d>4 <e a cis> <d a' b> \t { <e a cis>4 <fis a d>8 ~ } |
-    \t { q4 \cright \oneVoice d'8( e fis a } << { \voiceOne d8) r r4 } \new Voice { \voiceTwo d,4 e } >> \oneVoice
+    \cstud ##t #'(7.5 . 8) \t { q4 \cright \oneVoice d'8( e fis a } << { \voiceOne d8) r r4 } \new Voice { \voiceTwo d,4 e } >> \oneVoice
 
     << {
       \t { f4 e8 f4 e8 } f4 \t { e4 f8 ~ | f4 e8 f4 e8 } f4 \t { e'4 f8 ~ } |
