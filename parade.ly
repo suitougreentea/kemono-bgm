@@ -66,15 +66,16 @@ pedre = \sustainOff\sustainOn
 
 \header {
   title = "けものパレード"
+  subtitle = \markup { \jp-sans-semibold "～ジャパリパークメモリアル～" }
   nickname = "（すやすやぽわわんのやつ）"
-  revision = "Revision 1 (Release Candidate)"
+  revision = "Revision 1"
   date = "2017/6/7"
 }
 
 \paper {
   page-count = 7
-  system-count = 35
-  max-systems-per-page = 5
+  system-count = 36
+  max-systems-per-page = 6
 }
 
 global = {
@@ -112,6 +113,21 @@ global = {
   s1*10
   \bar "||"
   s1*18
+  \bar "||" \break
+  \set Score.tempoHideNote = ##t
+  \tempo \markup {
+    \concat {
+      \smaller \general-align #Y #DOWN \note #"4" #1
+      \normal-text " = ca. 100"
+    }
+  } 4 = 100
+  \time 6/8
+  \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
+  \mark \markup { \fontsize #-2 \musicglyph #"scripts.ufermata" }
+  s8*12
+  \bar "||"
+  \time 4/4
+  s1*3
   \bar "|."
 }
 
@@ -184,7 +200,7 @@ right = << \global \relative {
     % A'
     << {
       \oneVoice \cstud ##t #'(-5 . -6.5) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <g, b fis'>4 \t { <b d a'>4 <g d'>8 <d' b' d> q q <b' d b'>4 <a cis e a>8 ~ } |
-      \cstud ##t #'(-5 . -5.5) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <a d fis>4 \t { <d a'>4 <a d>8 a'( g fis e d b) }
+      \cstud ##t #'(-4.7 . -5) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <a d fis>4 \t { <d a'>4 <a d>8 a'( g fis e d b) }
     } \new Voice {
       \hide TupletBracket \hide TupletNumber
       \voiceTwo \cleft s4 <d, fis>4 \t { \rp 0 r8 <fis a>4 } q4 | s1 |
@@ -197,7 +213,7 @@ right = << \global \relative {
 
     << {
       \oneVoice \cstud ##t #'(-5 . -6) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <a d fis>4 \t { <d a'>4 <a d>8 <d g d'> q q <b' e b'>4 <a d fis a>8 ~ } |
-      \cstud ##t #'(-5 . -5.5) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <a d fis>4 \t { <d a'>4 <a d>8 a'( g fis e d b) }
+      \cstud ##t #'(-4.7 . -5) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <a d fis>4 \t { <d a'>4 <a d>8 a'( g fis e d b) }
     } \new Voice {
       \hide TupletBracket \hide TupletNumber
       \voiceTwo \cleft s4 <d, fis>4 \t { \rp 4 r8 <a' cis>4 } q4 | s1 |
@@ -259,8 +275,8 @@ right = << \global \relative {
   % A''
   \key d \major
   << {
-    \oneVoice \cstud ##t #'(-5 . -5.5) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <g, b fis'>4 \t { <b d a'>4 <g d'>8 <b' d g b> q q q4 <a cis e a>8 ~ } |
-    \cstud ##t #'(-5 . -5.5) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <fis, a fis'>4 \t { <d' a'>4 <a d>8 a'( g fis e d b) }
+    \oneVoice \cstud ##t #'(-4.7 . -5) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <g, b fis'>4 \t { <b d a'>4 <g d'>8 <b' d g b> q q q4 <a cis e a>8 ~ } |
+    \cstud ##t #'(-4.7 . -5) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <fis, a fis'>4 \t { <d' a'>4 <a d>8 a'( g fis e d b) }
   } \new Voice {
     \hide TupletBracket \hide TupletNumber
     \voiceTwo \cleft s4 <d, fis>4 \t { \rp 0 r8 <fis a>4 } q4 | s1 |
@@ -273,7 +289,7 @@ right = << \global \relative {
 
   << {
     \oneVoice \cstud ##t #'(-5 . -6) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <a fis'>4 \t { <d a'>4 <a d>8 <d g d'> q q <b' e b'>4 <a d fis a>8 ~ } |
-    \cstud ##t #'(-5 . -5.5) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <a d fis>4 \t { <d a'>4 <a d>8 a'( g fis e d b) }
+    \cstud ##t #'(-4.7 . -5) \t { q4 \cleft \voiceOne a,8 b4 d8 e4 d8 e4 d8 } | \cright \oneVoice <a d fis>4 \t { <d a'>4 <a d>8 a'( g fis e d b) }
   } \new Voice {
     \hide TupletBracket \hide TupletNumber
     \voiceTwo \cleft s4 <d, fis>4 \t { \rp 4 r8 <a' cis>4 } q4 | s1 |
@@ -285,6 +301,11 @@ right = << \global \relative {
   <e,, g b>4 <fis a cis> <g b d> \t { <gis b d e>4 <d' e b'>8 ~ q4 <cis e a>8 } q4 \t { <e cis'>8[ r q] r4 <fis a d>8 }
 
   r2 <a a'>8 r \t { r4 <g g'>8 ~ | q4 fis'8 e4 a8 d, fis a } <d, fis d'>8 r |
+
+  fis8-_ e-_ d-_ fis-_ e-_ d-_ | fis-_ e-_ d-_ b'-_ e,-_ d-_ |
+  <g, b>8-_ r <a cis>-_ r <b d>-_ r <cis e>-_ <fis b>-_ |
+  \override TextSpanner.bound-details.left.text = "rit."
+  r\startTextSpan <e a>-_ <e a>-_ r \t { fis[ r fis] r e r\stopTextSpan } | d1\fermata
 } >>
 
 left = << \global \relative {
@@ -362,7 +383,7 @@ left = << \global \relative {
     \oneVoice <g, g'>4 \t { g4 g,8 ~ g4 g'8 ~  g4 <a, a'>8 ~ } |
       } \new Voice {
     \voiceTwo bes4 \ti { bes'4 c,8 ~ } c4 \ti { c'4 a,8 ~ | a4 a'8 ~ a4 d,8 ~ } d4 d |
-  } \new Voice { \hideNotes \showStaffSwitch \override NoteColumn.ignore-collision = ##t s1 | s2. \ti { r4 c''8 | \cright a4 } } >>
+  } \new Voice { \hideNotes \showStaffSwitch \override NoteColumn.ignore-collision = ##t s1 | s2. \ti { s4 c''8 | \cright a4 } } >>
   \t { q4 a,,8 ~ a4 a'8 ~ a4 a,8 } a'4 |
 
   \t { <bes bes'>8-> q-> q-> } q8-> r \t { <bes, bes'>8-> q-> q-> } q8-> r | \t { q8-> q-> q-> q-> q-> q-> } q4-_-> \t { bes'4 bes'8 } |
@@ -391,6 +412,10 @@ left = << \global \relative {
   <e e'>4 <fis fis'> <g g'> \t { gis'8[ gis,] <a a'> ~ q4 e'8 } a,4 \t { a'8[ r g] fis r <d d'> }
 
   \t { r4 d8 d'[ r d'] <a, a'>[ r a'] \handBracket ##f -1 \tadj #'(-4 . -4.5) \parenthesize a' r <g,, g'> ~ | q4 <fis fis'>8 <e e'>4 a8 <d, d'> fis a } d8 r |
+
+  \clef treble
+  d'8-_[ r a'-_] cis,-_[ r a'-_] | b,-_[ r fis'-_] a,-_[ r e'-_] |
+  b8-_ r cis-_ r d-_ r e-_ b'-_ | r a-_ a-_ r \t { fis[ r fis] r e r } | d1\fermata
 } >>
 
 dynamics = {
@@ -428,7 +453,9 @@ dynamics = {
   s1*2\! s1\< s4 s\! s2
   s1*3 s2 s\>
   s1*2\! s1\< s4 s\! s2\>
-  s1\mf
+  s1*2\mf
+
+  s8*12\mp s1 s2 s\> s1\p
 }
 
 pedal = {
