@@ -141,7 +141,7 @@ right = << \global \relative {
   <a, d fis>8[ r e'] ~ e4 d8 \acciaccatura ais''8 <d, fis b>8[ r e] ~ e4 d8
   <e,, g b>4. <fis a cis> <g b d> <gis b d e>4 <d' e b'>8 ~ q4 <cis e a>8 q4. <e cis'>8[ r q] r4 <fis a d>8
 
-  r2. <a a'>8 r r r4 <g g'>8 ~ | q4 fis'8 e4 a8 d,4.-_ a,8 b cis \break |
+  r2. <a a'>8 r r r4 <g g'>8 ~ | q4 fis'8 e4 a8 d,4 r8 a, b cis \break |
 
   \repeat volta 2 {
     << {
@@ -170,10 +170,10 @@ right = << \global \relative {
        } \\ {
       <a,, c>2. ~ q4. q4 <g c>8 ~ | q2. ~ q4. <g' c>4 <a c>8 ~ |
       q2. ~ q4.
-    } >> <a c e g>4 <c f a>8 ~ q4 <c e g>8 q4.-_ <g c e g>4 <f bes d f>8 ~ q4 <e a cis e>8 ~
+    } >> <a c e g>4 <c f a>8 ~ q4 <c e g>8 q4 r8 <g c e g>4 <f bes d f>8 ~ q4 <e a cis e>8 ~
 
     q2. r2. | r4. r8 e e' e8 r r \ottava 1 e8 e'4 \ottava 0 |
-    <e,, gis b e>4 q8 <fis b d fis>4 q8 <gis b d gis>4. << { \oneVoice <b d e b'>4 \voiceOne a'8 ~ | a4. r } \\ { s4 <a, d e>8 ~ q4 q8 q4.-_ } >>
+    <e,, gis b e>4 q8 <fis b d fis>4 q8 <gis b d gis>4. << { \oneVoice <b d e b'>4 \voiceOne a'8 ~ | a4. r } \\ { s4 <a, d e>8 ~ q4 q8 q4 r8 } >>
     <d, a' d>8 q q <b' e b'>4 <a d fis a>8 ~
 
     % A'
@@ -204,7 +204,7 @@ right = << \global \relative {
     r2. <a a'>8 r r r4 <g g'>8 ~ |
   }
   \alternative {
-    { <g g'>4 fis'8 e4 a8 d,4.-_ a,8 b cis | }
+    { <g g'>4 fis'8 e4 a8 d,4 r8 a, b cis | }
     { <g' g'>4\repeatTie fis'8 e4 a8 d,4. r | }
   }
 
@@ -228,7 +228,7 @@ right = << \global \relative {
   <e g e'>[ r <g g'>] <c a' c>[ r <bes g' bes>] <a f' a>[ r <bes g' bes>] <c a' c>[ r <f a f'>]
 
   <d f bes d>8-> q-> q-> q8-> r r q8-> q-> q-> q8-> r r |
-  <d f d'>8-> <e g e'>-> <d f d'>-> <e g e'>-> <d f d'>-> <e g e'>-> <d f d'>4.-_-> r8 g, bes |
+  <d f d'>8-> <e g e'>-> <d f d'>-> <e g e'>-> <d f d'>-> <e g e'>-> <d f d'>4-> r8 r g, bes |
   <e, g c>4. ~ q8 bes' c <d, f bes d>4. bes'8 c d |
   <ees, aes c ees>4. <c c'>8 <bes bes'> <c c'> << { <bes' des>8 q q } \\ des,4. >> <bes' ees bes'>4 <aes des aes'>8\arpeggio ~
 
@@ -246,7 +246,7 @@ right = << \global \relative {
   <ees, ges bes>4. <f aes c> <ges bes des> <g bes des ees>4 <des' ees bes'>8 ~ |
 
   q4 <c ees aes>8 q4. <aes' c aes'>8 q q q4 <a cis e a>8 ~ |
-  q2. ~ q4. ~ q4 <b d fis b>8 ~ q4 <a cis e a>8 q4.-_ <b e g b>8 q q q4 <a d fis a>8 ~
+  q2. ~ q4. ~ q4 <b d fis b>8 ~ q4 <a cis e a>8 q4 r8 <b e g b> q q q4 <a d fis a>8 ~
 
   % A''
   \key d \major
@@ -298,7 +298,7 @@ left = << \global \relative {
   <b b'>4.-_ q-_ <bes bes'>-_ q-_ | <a a'>-_ q-_ <gis gis'>-_ q-_ |
   <e e'>4. <fis fis'> <g g'> gis'8[ gis,] <a a'> ~ q4 e'8 a,4. a'8[ r g] fis r <d d'>
 
-  r4 d8 d'[ r d'] <a, a'>[ r a'] \handBracket ##f -1 \parenthesize a' r <g,, g'> ~ | q4 <fis fis'>8 <e e'>4 a8 <d, d'>4.-_ r |
+  r4 d8 d'[ r d'] <a, a'>[ r a'] \handBracket ##f -1 \parenthesize a' r <g,, g'> ~ | q4 <fis fis'>8 <e e'>4 a8 <d, d'>4 r8 r4. |
 
   \repeat volta 2 {
     fis4. d'4 fis8 r2. | g,4. d'4 g8 r2. |
@@ -314,13 +314,13 @@ left = << \global \relative {
     \voiceTwo a4. a a4 a8 a,4 d8 ~ | d4 \oneVoice d8 d'4 d,8 d'4. e |
 
     d,4.-_ d-_ d-_ d4 c8 ~ | c4.-_ c-_ c-_ c4 b8 ~ |
-    b4 b'8 b,4 b'8 b,4 b'8 b,[ b'] c, ~ | c4 c'8 c,4.-_ <c c'>4 <bes bes'>8 ~ q4 <a a'>8 ~ |
+    b4 b'8 b,4 b'8 b,4 b'8 b,[ b'] c, ~ | c4 c'8 c,4 r8 <c c'>4 <bes bes'>8 ~ q4 <a a'>8 ~ |
 
     << \new Voice {
       \voiceOne a' e' a <a cis e>4. r8 g b <g d' e>4. |
       r8 fis a <fis d' e>4. r8 f a <f d' e>4.
     } { \voiceTwo <a,, a'>2. <g g'> | <fis fis'> <f' f'> | } >> \oneVoice
-    <e e'>4. q e8 e' e, e4 <a, a'>8 ~ | q4 q8 q4.-_ a8 a' g, <g g'>4 <fis fis'>8 ~ |
+    <e e'>4. q e8 e' e, e4 <a, a'>8 ~ | q4 q8 q4 r8 a a' g, <g g'>4 <fis fis'>8 ~ |
 
     % A'
     \voiceFour q4 d'8 \hs 0.3 fis4. fis,4 d'8 \hs 0.3 g a d, | \oneVoice <g, g'>4 g8 g'4. g,4 d'8 g,[ g'] <a, a'> ~
@@ -338,7 +338,7 @@ left = << \global \relative {
     r4 d8 d'[ r d'] <a, a'>[ r a'] \handBracket ##f -1 \parenthesize a' r <g,, g'> ~ |
   }
   \alternative {
-    { q4 <fis fis'>8 <e e'>4 a8 <d, d'>4.-_ r | }
+    { q4 <fis fis'>8 <e e'>4 a8 <d, d'>4 r8 r4. | }
     { <g g'>4\repeatTie <fis fis'>8 <e e'>4 a8 <d, d'>4. r | } \break
   }
 
@@ -360,7 +360,7 @@ left = << \global \relative {
   } \new Voice { \hideNotes \showStaffSwitch \override NoteColumn.ignore-collision = ##t s1. | s2. s4. s4 c''8 | \cright a4 } >>
   q4 a,,8 ~ a4 a'8 ~ a4 a,8 a'4. |
 
-  <bes bes'>8-> q-> q-> q8-> r r <bes, bes'>8-> q-> q-> q8-> r r | q8-> q-> q-> q-> q-> q-> q4.-_-> bes'4 bes'8 |
+  <bes bes'>8-> q-> q-> q8-> r r <bes, bes'>8-> q-> q-> q8-> r r | q8-> q-> q-> q-> q-> q-> q4-> r8 bes'4 bes'8 |
   <c, g' c>4. c8 c' c, <bes f' bes>4. bes8 bes' bes, | <aes ees' aes>4. aes8 aes' aes, <ges des' ges>4. ges8[ ges'] <f des'>\arpeggio ~ |
 
   \key des \major
@@ -369,7 +369,7 @@ left = << \global \relative {
   <bes f'>2.\arpeggio <a f'>\arpeggio | <aes f'>\arpeggio <g g'>\arpeggio |
   ees4. f ges g4 aes8 ~ aes4 ees8 <aes, aes'>4. q4 q8 r4 a8 |
 
-  <e e'>4. <fis fis'> <g g'> <gis gis'>4 <a a'>8 ~ q4 q8 q4.-_ q8 q q a'[ a,] <fis fis'> ~
+  <e e'>4. <fis fis'> <g g'> <gis gis'>4 <a a'>8 ~ q4 q8 q4 r8 q q q a'[ a,] <fis fis'> ~
 
   % A''
   \key d \major
