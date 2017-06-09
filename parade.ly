@@ -7,11 +7,6 @@ t = #(define-music-function
   #{ \tuplet 3/2 4 $notes #}
 )
 
-ti = #(define-music-function
-  (parser location notes) (ly:music?)
-  #{ \scaleDurations 2/3 $notes #}
-)
-
 rp = #(define-music-function
   (parser location pos) (number?)
   #{ \once \override Rest.staff-position = $pos #}
@@ -31,30 +26,6 @@ ossia = #(define-music-function
     \magnifyStaff #4/5
     firstClef = ##f
   } $notes #}
-)
-
-addSpace = #(define-music-function
-  (parser location esw) (pair?)
-  #{
-    \once \override PianoStaff.BarLine.extra-spacing-width = $esw
-    \once \hide PianoStaff.BarLine \once \hide PianoStaff.SpanBar
-    \bar "|"
-  #}
-)
-
-cstud = #(define-music-function
-  (parser location reverse pos) (boolean? pair?)
-  #{
-    \once \override TupletBracket.positions = $pos
-    \once \override TupletBracket.edge-height = #(if reverse '(0.7 . -0.7) '(-0.7 . 0.7))
-  #}
-)
-
-tadj = #(define-music-function
-  (parser location pos) (pair?)
-  #{
-    \once \override TupletBracket.positions = $pos
-  #}
 )
 
 cleft = \change Staff = "left"
