@@ -40,7 +40,7 @@ pedre = \sustainOff\sustainOn
   subtitle = \markup { \jp-sans-semibold "～ジャパリパークメモリアル～" }
   nickname = "（すやすやぽわわんのやつ）"
   revision = "Revision 2 (Unfinished)"
-  date = "2017/6/7"
+  date = "2017/6/10"
 }
 
 \paper {
