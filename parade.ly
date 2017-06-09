@@ -68,8 +68,8 @@ pedre = \sustainOff\sustainOn
   title = "けものパレード"
   subtitle = \markup { \jp-sans-semibold "～ジャパリパークメモリアル～" }
   nickname = "（すやすやぽわわんのやつ）"
-  revision = "Revision 1"
-  date = "2017/6/7"
+  revision = "Revision 2 (Unfinished)"
+  date = "2017/6/10"
 }
 
 \paper {
@@ -193,8 +193,8 @@ right = << \global \relative {
       q2.
     } >> \t { <a c e g>4 <c f a>8 ~ q4 <c e g>8 } q4-_ \t { <g c e g>4 <f bes d f>8 ~ q4 <e a cis e>8 ~ }
 
-    q2 r2 | r4 \t { r8 e e' } e8 r \ottava 1 \t { e8 e'4 } \ottava 0 |
-    \t { <e,, gis b e>4 q8 <fis b d fis>4 q8 } <gis b d gis>4 << { \t { \oneVoice <b d e b'>4 \voiceOne a'8 ~ } | a4 r } \\ { \ti { s4 <a, d e>8 ~ } \t { q4 q8 } q4-_ } >>
+    q2 r2 | r4 \t { r8 e e' } e8 r \ottava 1 \t { e'8 e'4 } \ottava 0 |
+    \t { <e,,, gis b e>4 q8 <fis b d fis>4 q8 } <gis b d gis>4 << { \t { \oneVoice <b d e b'>4 \voiceOne a'8 ~ } | a4 r } \\ { \ti { s4 <a, d e>8 ~ } \t { q4 q8 } q4-_ } >>
     \t { <d, a' d>8 q q <b' e b'>4 <a d fis a>8 ~ }
 
     % A'
