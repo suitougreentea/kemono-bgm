@@ -24,10 +24,11 @@
 
 #(define (combined-clef-stencil grob)
    (ly:stencil-add
-    (ly:stencil-translate-axis (ly:font-get-glyph (ly:grob-default-font grob) "clefs.G") 9 1)
+    ;(ly:stencil-translate-axis (ly:font-get-glyph (ly:grob-default-font grob) "clefs.G") 9 1)
     (ly:stencil-translate-axis (ly:font-get-glyph (ly:grob-default-font grob) "clefs.G") 2 1)
     (ly:stencil-translate-axis (ly:font-get-glyph (ly:grob-default-font grob) "clefs.F") -2 1)
-    (ly:stencil-translate-axis (ly:font-get-glyph (ly:grob-default-font grob) "clefs.F") -9 1)))
+    ;(ly:stencil-translate-axis (ly:font-get-glyph (ly:grob-default-font grob) "clefs.F") -9 1)
+    ))
 
 #(define (combined-time-signature-stencil grob)
    (let ((stencil-orig (ly:time-signature::print grob)))
@@ -103,7 +104,7 @@ translateHairpin = #(define-music-function
 \header {
   title = "芸するやつ"
   subtitle = \markup { \center-column { \bold \italic "Faithful copy" } }
-  revision = "Revision 1"
+  revision = "Revision 1.1"
   date = "2019/3/25"
 }
 
