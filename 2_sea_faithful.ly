@@ -3,6 +3,23 @@
 \include "stylesheet.ily"
 \include "arbitrary-layer-whiteout.ily"
 
+#(define color5-engraver
+  (make-engraver
+   (acknowledgers
+    ((note-head-interface engraver grob source-engraver)
+     (let* ((cause (event-cause grob))
+            (pitch (ly:prob-property cause 'pitch))
+            (alteration (ly:pitch-alteration pitch)))
+       (ly:grob-set-property! grob 'color
+         (cond
+          ((eqv? alteration 1) (rgb-color 0.976 0.258 0.067))
+          ((eqv? alteration 1/2) (rgb-color 0.983 0.544 0.035))
+          ((eqv? alteration -1/2) (rgb-color 0.461 0.990 0.981))
+          ((eqv? alteration -1) (rgb-color 0.025 0.544 0.966))
+          (else black)
+           ))
+       )))))
+
 #(define small-sforzato-stencil
    (lambda (grob)
      (ly:stencil-scale
@@ -103,14 +120,14 @@ translateHairpin = #(define-music-function
 
 \header {
   title = "芸するやつ"
-  subtitle = \markup { \center-column { \bold \italic "Faithful copy" } }
-  revision = "Revision 1.1"
-  date = "2019/3/25"
+  subtitle = \markup { \center-column { \bold \italic "Faithful copy (color5 ed.)" } }
+  revision = "Revision 1.1a"
+  date = "2019/3/27"
 }
 
 \paper {
   %systems-per-page = 5
-  system-count = 18
+  %system-count = 18
 }
 
 global = {
@@ -135,7 +152,7 @@ music = \relative {
     \r 12 <c e>16( <d f> <c e>-.) r <c e>( <d f> <c e>-.) r <c, e c' e> <c e c' e> <c e d' f> <c e d' f> <a fis' dis' fis> r <g' e' g>8-- |
     <e' g>16( <f a> <e g>-.) r <e g>( <f a> <e g>-.) r <e, g e' g> <e g e' g> <e a f' a> <e a f' a> <g, b' g' b> r <c' aes' c>8-- |
     <d g b d>16-.-> r <g, b g'> q <fis ais fis'> r <g b g'>-. r <d' g b d>-.-> r <g, d' g>( <fis cis' fis> <g d' g>-.) r <f' aes bes d f>8->~ | \pageBreak
-    q16 <e g e'> <ees ges ees'> <d f d'> <des fes des'> <c ees c'> <b d b'> <bes des bes'> <a c a'>-. \r 10 r \whiteOut Stem \whiteOut NoteHead \whiteOut Accidental <fis ais fis'>-. r <g b d g>4-- |
+    q16 <e g e'> <ees ges ees'> <d f d'> <des fes des'> <c ees c'> <b d b'> <bes des bes'> <a c a'>-. \r 10 r \whiteOut Stem \whiteOut NoteHead <fis ais fis'>-. r <g b d g>4-- |
      } \\ \relative {
     \hs 0 \r -6 r8 \sl 13 <c e g c>_. r \sl 13 q_. r q16_. q_. q8_. q_. |
     r8 <c e g c>_. r q_. r q16_. q_. q8_. q_. |
@@ -164,20 +181,20 @@ music = \relative {
     \r 20
     \acciaccatura { <ais'' ais'>16 <b b'> }
     <c c'>16-. r <b b'>-. r <ais ais'>-. <b b'>-. <ais ais'>-. <a a'>-. <aes aes'>8-. \once \hs 1 <g g'>-. <fis fis'>-. <g g'>-. |
-    <a a'>16-. r <aes aes'>-. r <g g'>-. \once \hs -2.2 \once \override Accidental.extra-spacing-width = #'(0.2 . 0) \once \override Accidental.X-offset = -4 <aes! aes'>-. <g g'>-. <ges ges'>-. \hs 1 <f f'>8-. <e e'>-. <dis dis'>-. \hs 0.5 <e e'>-. \hs 0 |
+    <a a'>16-. r <aes aes'>-. r <g g'>-. \once \hs -1 <aes! aes'>-. <g g'>-. <ges ges'>-. \hs 1 <f f'>8-. <e e'>-. <dis dis'>-. \hs 0.5 <e e'>-. \hs 0 |
     s1*2
     
     \acciaccatura { <ais ais'>16 <b b'> }
     <c c'>16-. r <b b'>-. r <ais ais'>-. <b b'>-. <ais ais'>-. <a a'>-. <aes aes'>8-. \once \hs 1 <g g'>-. <fis fis'>-. <g g'>-. |
-    <a a'>16-. r <aes aes'>-. r <g g'>-. \once \hs -2.2 \once \override Accidental.extra-spacing-width = #'(0.2 . 0) \once \override Accidental.X-offset = -4 <aes! aes'>-. <g g'>-. <ges ges'>-. \hs 1 <f f'>8-. <e e'>-. <dis dis'>-. \hs 0.5 <e e'>-. \hs 0 |
+    <a a'>16-. r <aes aes'>-. r <g g'>-. \once \hs -1 <aes! aes'>-. <g g'>-. <ges ges'>-. \hs 1 <f f'>8-. <e e'>-. <dis dis'>-. \hs 0.5 <e e'>-. \hs 0 |
      } \\ \relative {
     \r 6 <g' c e>16 <a d f> <g c e>-. r <g c e> <a d f> <g c e>-. r \bp 0 0 \once \override Beam.layer = -2 <g c e> <g c e> \once \hs 0 \once \override Stem.layer = -2 <g d' f> <g d' f> <g dis' fis> r \once \override Script.extra-offset = #'(-0.1 . 0) <g e' g>8^- |
-    \once \hs 1 <c e g>16 <dis fis a> \once \hs 1 <c e g>-. r \bp 1.2 1.2 <c e g> \once \override Accidental.X-offset = -1.1 <dis fis a> <c e g>-. r <c e g> <c e g> <c f a> <c f a> <c g' b> r \once \override Script.extra-offset = #'(0 . 1) <c a' c>8^- |
+    \once \hs 1 <c e g>16 <dis fis a> \once \hs 1 <c e g>-. r \bp 1.2 1.2 <c e g> <dis fis a> <c e g>-. r <c e g> <c e g> <c f a> <c f a> <c g' b> r \once \override Script.extra-offset = #'(0 . 1) <c a' c>8^- |
     \r 8 \voiceOne r8 <b d g b>4-> <bes des bes'>16 <a c a'> <aes ces aes'> <g bes g'> <ges beses ges'> <f aes f'> <e fis e'>8 <f g d' f>8 |
     r8 <b d g b>4-> <bes des bes'>16 <a c a'> <g b g'> <fis ais fis'> <g b g'> <a c a'> <g b g'>8 r |
     
     \voiceTwo \r 6 <g c e>16 <a d f> <g c e>-. r <g c e> <a d f> <g c e>-. r \bp 0 0 \once \override Beam.layer = -2 <g c e> <g c e> \once \hs 0\once \override Stem.layer = -2 <g d' f> <g d' f> <g dis' fis> r \once \override Script.extra-offset = #'(-0.1 . 0) <g e' g>8^- |
-    \once \hs 1 <c e g>16 <dis fis a> \once \hs 1 <c e g>-. r \bp 1.2 1.2 <c e g> \once \override Accidental.X-offset = -1.1 <dis fis a> <c e g>-. r <c e g> <c e g> <c f a> <c f a> <c g' b> r \once \override Script.extra-offset = #'(0 . 1) <c a' c>8^- |
+    \once \hs 1 <c e g>16 <dis fis a> \once \hs 1 <c e g>-. r \bp 1.2 1.2 <c e g> <dis fis a> <c e g>-. r <c e g> <c e g> <c f a> <c f a> <c g' b> r \once \override Script.extra-offset = #'(0 . 1) <c a' c>8^- |
     \voiceOne <d g b d>16-.-> r <g, b g'> q <fis ais fis'>8 <g b g'>16-. r <e' g c e>-.-> r <g, e' g> <g e' g> <fis dis' fis>8 <g e' g>16-. r |
     <f' a f'>16 <e g e'> <f a f'> <g b g'> <f a f'> <e g e'> <d f d'> <c e c'> <b d b'> <g b g'> \once \hs -0.5 <a c a'> <b d b'> \once \hs -0.5 <c e c'>4 |
      } \\ \relative {
@@ -209,11 +226,12 @@ music = \relative {
     <g' b>16( <a c> <g b>-.) r \voices 1,6 << { <g' b>16( <a c> <dis, g b>-.) \r 10 r } \\ { dis8 s } >> <e g b>8 <b e e'>16 <bes ees ees'> <a d d'> <aes des des'> <g c c'> <fis b b'> |
     <f bes bes'>16 <e a a'> <ees aes aes'> <d g g'> <cis fis fis'>-. \r 6 r <c e e'>-. r \voices 1,6,3 << { s8. \once \omit Stem \once \omit Flag \lowerLayer Glissando \inStaffDynamicSpanner \translateHairpin 0 3 20 1 0 dis'16_\< \glissando \once \omit Stem \once \omit Flag b''\! s s \once \omit Stem \once \omit Flag \inStaffDynamicSpanner \translateHairpin 0 4 -45 -1 -1.6 fis_\> \glissando } \\
                                                                                                           { \once \hs 0 <b,,, dis fis>4 q16-. \r 2 r r8 } \\
-                                                                                                          { <b' dis fis>8.\noBeam s16 \once \override Accidental.extra-spacing-width = #'(0.2 . 0) \whiteOut Accidental <b' dis fis b>-.-> \r 20 r r } >> |
+                                                                                                          { <b' dis fis>8.\noBeam s16 <b' dis fis b>-.-> \r 20 r r } >> |
     
     \once \omit Stem \once \omit Flag \once \hs -0.5 b,16\! r16 <gis b e gis>4 \once \hs -0.5 <fis b dis fis>8-. <gis b e gis>8. <fis b dis fis>16 <gis b e gis>16 r <b e gis b>8 |
     \once \hs -0.5 <a cis e a>4 r16 <b, dis b'> <cis e cis'> <dis fis dis'> <e gis e'> <fis a fis'> <g bes g'> <gis b gis'> \once \hs -0.5 <a cis a'>-. r \once \hs -0.5 <b dis fis a b>8--->~ |
     q8 \once \hs -1.2 <a b dis fis>4 \once \hs -0.5 <b e gis>8-. \hs 0 <a b dis fis>8. <cis fis cis'>16 <b eis b'>8-. \once \hs -0.5 <a dis a'>-. |
+    
     \voices 1,3 << { \once \hs -0.5 <e' gis>4 } \\ { b8. <e, b'>16 } >> <gis e'>8 \once \hs -0.5 <e b'>16 <gis e'> <b gis'>8 \once \hs -0.5 <gis e'>16 <b gis'> <e b'>8 q |
     
     <c f a c>4~ \once \hs -0.5 q16 a' <f c'> <a f'> <g e'> <f d'> <e c'> <d b'> <c a'> <b g'> \once \hs -0.5 <a f'> <g e'> |
@@ -232,7 +250,7 @@ music = \relative {
     
     r8 <f a c>16 q q8-. q-. r q_. r q_. |
     \r -4 r8 <fis a c>_. \r -2 r <a c ees>_. \r 0 r <c ees fis>_. \r 2 r <ees fis a>_. |
-    <fis, b dis>16-. r b_( ais b cis b ais b-.) r \once \hide Accidental \once \hide Stem \lowerLayer Glissando \inStaffDynamicSpanner \translateHairpin 1 2 40 0 0 f'16_\< \glissando s16 s8 b''8\!
+    <fis, b dis>16-. r b_( ais b cis b ais b-.) r \once \hide Stem \lowerLayer Glissando \inStaffDynamicSpanner \translateHairpin 1 2 40 0 0 f'16_\< \glissando s16 s8 b''8\!
      } \\ \relative {
     \r -20 a,,8-- r e-- r d'-- r a-- r |\pageBreak
     g8-- r d'-- r c-- r g-- r |
@@ -253,20 +271,20 @@ music = \relative {
   << \relative {
     \r 20
     <c''' c'>16-. r <b b'>-. r <ais ais'>-. <b b'>-. <ais ais'>-. <a a'>-. <aes aes'>8-. \once \hs 1 <g g'>-. <fis fis'>-. <g g'>-. |
-    <a a'>16-. r <aes aes'>-. r <g g'>-. \once \hs -2.2 \once \override Accidental.extra-spacing-width = #'(0.2 . 0) \once \override Accidental.X-offset = -4 <aes! aes'>-. <g g'>-. <ges ges'>-. \hs 1 <f f'>8-. <e e'>-. <dis dis'>-. \hs 0.5 <e e'>-. \hs 0 |
+    <a a'>16-. r <aes aes'>-. r <g g'>-. \once \hs -1 <aes! aes'>-. <g g'>-. <ges ges'>-. \hs 1 <f f'>8-. <e e'>-. <dis dis'>-. \hs 0.5 <e e'>-. \hs 0 |
     s1*2
     
     \acciaccatura { <ais ais'>16 <b b'> }
     <c c'>16-. r <b b'>-. r <ais ais'>-. <b b'>-. <ais ais'>-. <a a'>-. <aes aes'>8-. \once \hs 1 <g g'>-. <fis fis'>-. <g g'>-. |
-    <a a'>16-. r <aes aes'>-. r <g g'>-. \once \hs -2.2 \once \override Accidental.extra-spacing-width = #'(0.2 . 0) \once \override Accidental.X-offset = -4 <aes! aes'>-. <g g'>-. <ges ges'>-. \hs 1 <f f'>8-. <e e'>-. <dis dis'>-. \hs 0.5 <e e'>-. \hs 0 |
+    <a a'>16-. r <aes aes'>-. r <g g'>-. \once \hs -1 <aes! aes'>-. <g g'>-. <ges ges'>-. \hs 1 <f f'>8-. <e e'>-. <dis dis'>-. \hs 0.5 <e e'>-. \hs 0 |
      } \\ \relative {
     \r 6 <g' c e>16 <a d f> <g c e>-. r <g c e> <a d f> <g c e>-. r \bp 0 0 \once \override Beam.layer = -2 <g c e> <g c e> \once \hs 0 \once \override Stem.layer = -2 <g d' f> <g d' f> <g dis' fis> r \once \override Script.extra-offset = #'(-0.1 . 0) <g e' g>8^- |
-    \once \hs 1 <c e g>16 <dis fis a> \once \hs 1 <c e g>-. r \bp 1.2 1.2 <c e g> \once \override Accidental.X-offset = -1.1 <dis fis a> <c e g>-. r <c e g> <c e g> <c f a> <c f a> <c g' b> r \once \override Script.extra-offset = #'(0 . 1) <c a' c>8^- |
+    \once \hs 1 <c e g>16 <dis fis a> \once \hs 1 <c e g>-. r \bp 1.2 1.2 <c e g> <dis fis a> <c e g>-. r <c e g> <c e g> <c f a> <c f a> <c g' b> r \once \override Script.extra-offset = #'(0 . 1) <c a' c>8^- |
     \r 8 \voiceOne r8 <b d g b>4-> <bes des bes'>16 <a c a'> <aes ces aes'> <g bes g'> <ges beses ges'> <f aes f'> <e fis e'>8 <f g d' f>8 |
     r8 <b d g b>4-> <bes des bes'>16 <a c a'> <g b g'> <fis ais fis'> <g b g'> <a c a'> <g b g'>8 r |
     
     \voiceTwo \r 6 <g c e>16 <a d f> <g c e>-. r <g c e> <a d f> <g c e>-. r \bp 0 0 \once \override Beam.layer = -2 <g c e> <g c e> \once \hs 0\once \override Stem.layer = -2 <g d' f> <g d' f> <g dis' fis> r \once \override Script.extra-offset = #'(-0.1 . 0) <g e' g>8^- |
-    \once \hs 1 <c e g>16 <dis fis a> \once \hs 1 <c e g>-. r \bp 1.2 1.2 <c e g> \once \override Accidental.X-offset = -1.1 <dis fis a> <c e g>-. r <c e g> <c e g> <c f a> <c f a> <c g' b> r \once \override Script.extra-offset = #'(0 . 1) <c a' c>8^- |
+    \once \hs 1 <c e g>16 <dis fis a> \once \hs 1 <c e g>-. r \bp 1.2 1.2 <c e g> <dis fis a> <c e g>-. r <c e g> <c e g> <c f a> <c f a> <c g' b> r \once \override Script.extra-offset = #'(0 . 1) <c a' c>8^- |
     \voiceOne <d g b d>16-.-> r <g, b g'> q <fis ais fis'>8 <g b g'>16-. r <e' g c e>-.-> r <g, e' g> <g e' g> <fis dis' fis>8 <g e' g>16-. r |
     <f' a f'>16 <e g e'> <f a f'> <g b g'> <f a f'> <e g e'> <d f d'> <c e c'> <b d b'> <g b g'> \once \hs -0.5 <a c a'> <b d b'> <c e c'>4 |
     
@@ -327,6 +345,7 @@ pedal = {
         middleCPosition = 0
         clefPosition = 0
         \override Clef.stencil = #combined-clef-stencil
+        \override Clef.break-visibility = ##(#f #f #f)
         %\override TimeSignature.stencil = #combined-time-signature-stencil
         \override StaffSymbol.line-positions = #line-positions-ggff
         \override Stem.no-stem-extend = ##t
@@ -346,6 +365,12 @@ pedal = {
       \new PianoPedal = "pedal" \pedal
     >>
   >>
-  \layout {}
+  \layout {
+    \context {
+      \Staff
+      \remove "Accidental_engraver"
+      \consists #color5-engraver
+    }
+  }
   \midi {}
 }
