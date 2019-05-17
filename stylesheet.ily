@@ -167,3 +167,13 @@ handBracket = #(define-music-function
    \once \override ParenthesesItem.Y-offset = #pos
   #}
 )
+
+paperForMovie = \paper {
+  systems-per-page = 1
+  paper-height = 118.125\mm
+  ragged-bottom = ##f
+  top-system-spacing = #'((basic-distance . 12)
+       (minimum-distance . 6)
+       (padding . 10)
+       (stretchability . 12))
+}
