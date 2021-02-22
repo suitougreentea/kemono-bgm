@@ -36,7 +36,7 @@ global_a = {
 
 right_a = << \global_a \relative {
   \clef treble
-  r4. << { \voiceTwo <b d g>4\arpeggio \tuplet 3/2 { <c' e>8^( <d f>16 } } \new Voice { \voiceOne r8 <g, d' f g>4-.\arpeggio } >> |
+  r4. << { \voiceTwo <b d g>4\arpeggio \tuplet 3/2 { <c' e>8^( <d f>16 } } \new Voice { \voiceOne r8 <g, d' f g>4*1/2-.\arpeggio s8 %{ TODO: there is a spacing hack %} } >> |
   
   \oneVoice <c e>8-.) r \tuplet 3/2 { <c e>8( <d f>16 } <c e>8-.) r \tuplet 3/2 { <c e>8( <d f>16 } |
   <c e>8-.) <d f>-. <dis fis>-. <e g>4 \tuplet 3/2 { <e g>8( <f a>16 } |

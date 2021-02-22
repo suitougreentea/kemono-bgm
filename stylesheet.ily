@@ -146,24 +146,24 @@
 }
 
 handBracket = #(define-music-function
-  (parser location down pos) (boolean? number?)
+  (parser location is-down pos) (boolean? number?)
   #{
    \once \override ParenthesesItem.stencil =
       #(ly:make-stencil
         `(path 0.1
-           `(
-             moveto -1 ,,(* 1.7 (if down -1 1))
+           (
+             moveto -1 ,(* 1.7 (if is-down -1 1))
              lineto -1 0
              lineto -0.3 0
            )
-           `butt
-           `miter
+           butt
+           miter
          )
          (cons -1 0)
-         (cons 0 (* 1.7 (if down -1 1)))
+         (cons 0 (* 1.7 (if is-down -1 1)))
        )
    \once \override ParenthesesItem.X-extent = #'(-1.2 . 0)
-   \once \override ParenthesesItem.Y-extent = #`(0 . ,(* 1.7 (if down -1 1)))
+   \once \override ParenthesesItem.Y-extent = #`(0 . ,(* 1.7 (if is-down -1 1)))
    \once \override ParenthesesItem.Y-offset = #pos
   #}
 )
