@@ -83,9 +83,9 @@ right = << \global {
     s2. | s | r4 <c e a>2 | r4 <a c f>2 |
     s2 d4 | s2. | <des f>2. | s2. |
     
-    r4 <\parenthesize bes d>2 | r4 <\parenthesize bes d>2 | r4 <\parenthesize a c e> g' | <d fis a c> <fis, a c d>2 |
+    r4 <\parenthesize bes d>2 | r4 <\parenthesize bes d>2 | r4 <\parenthesize a c e> g' | <d fis a c> <\parenthesize fis, a c d>2 |
     s2. | <cis' e g>2 s4 | s2. | r4 <g bes ees>4 s |
-    <f' a>8( b, q b q b) | <f' a bes>( bes, <f' bes> bes, <f' a bes> bes,) |
+    <f' a>8( \once \override ParenthesesItem.X-offset = 0.5 \once \override Accidental.X-offset = -1.5 \handBracket ##t 1 \parenthesize b, q b q b) | <f' a bes>( bes, <f' bes> bes, <f' a bes> bes,) |
     <a' c>8( a, <e' g c> e <a c e> e) | r4 <gis b>2*1/2 s4 |
     <d f>2. | r8 g,( bes d f d) | <e g>2. | r8 a,( c e g e) |
     <f aes>2. | r8 des( f aes des aes) | r4 g, d' | \once \override ParenthesesItem.X-offset = 0.3 \handBracket ##t 0.7 \parenthesize c2 s4 | % TODO: f aesを入れ替えるossia
@@ -114,16 +114,16 @@ left = << \global {
     s4
     \voiceOne
     bes,8( f' bes f d'4) | bes,8( f' bes f d'4) |
-    a,8( e' a e c'4) | d,,8( a' d d a'4) |
+    a,8( e' a e c'4) | d,,8( a' f' d a'4) |
     g,8( d' f d bes'4) | a,8( e' a e %{\cright \stemDown%} \parenthesize cis'4) %{\cleft \stemUp%} |
     d,,8( a' d a \handBracket ##f -0.7 \parenthesize f'4) | c,8( c' ees bes' a4) |
     bes,8( f' bes f d'4) | bes,8( f' bes f d'4) |
-    a,8( e' a e r4) | d,8( a' d d a'4) |
+    a,8( e' a e r4) | d,8( a' f' d a'4) |
     g,8( d' f d bes'4) | a,8( f' a f c'4) |
     bes,8( f' bes f %{\cright \stemDown%} \parenthesize des'4) %{\cleft \stemUp%} | s2. |
     
     bes,8( f' bes f d'4) | bes,8( f' bes f d'4) |
-    a,8( e' a e \handBracket ##f -0.7 \parenthesize c'4) | d,,8( a' d d \handBracket ##f -0.7 \parenthesize a'4) |
+    a,8( e' a e \handBracket ##f -0.7 \parenthesize c'4) | d,,8( a' fis' d \handBracket ##f -0.7 \parenthesize a'4) |
     g,8( d' f d \handBracket ##f -0.7 \parenthesize bes'4) | cis,,8( e' a e %{\cright \stemDown%} \parenthesize cis'4) %{\cleft \stemUp%} |
     d,,8( a' d a \handBracket ##f -0.7 \parenthesize f'4) | c,8(^\markup \tiny \right-align *2 c' \parenthesize g' bes a4) |
     s2. | s | s | s |
