@@ -62,9 +62,9 @@ right = << \global {
   }
   \context Voice = "main" \relative {
     s4 |
-    <f' a bes>2 q4 | <g a bes>2 <a bes>4 | <e g>2. | s2. |
+    <f' a bes>2 q4 | <g bes c>2 <g bes c>4 | <e g>2. | s2. |
     <d f>2 q4 | s2. | <a c>2 q4 | <ees' g bes>2 <ees f a>4 |
-    <f a bes>2 q4 | <g a bes>2 <a bes>4 | <a c e>2 <a c>4 | <f a>2 s4 |
+    <f a bes>2 q4 | <g bes c>2 <g bes c>4 | <a c e>2 <a c>4 | <f a>2 s4 |
     <bes, d>2 s4 | <a c e>2 s4 | s2. | <c e>2 s4 |
     
     <f a bes>2 q4 | <f g a>2 <a bes c>4 | <e g a>2. | s |
