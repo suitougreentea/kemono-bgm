@@ -24,7 +24,7 @@ mergeOn = {
 
 global = {
   \key f \major
-  \tempo 4=100
+  \tempo 4=98
   \time 3/4
   \partial 4 { s4 }
   \bar ".|:"
